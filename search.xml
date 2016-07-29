@@ -4,12 +4,6 @@
   
     
     <entry>
-      <title><![CDATA[test]]></title>
-      <url>http://yoursite.com/2016/07/29/test/</url>
-      <content type="html"><![CDATA[<h1 id="Just-for-test…"><a href="#Just-for-test…" class="headerlink" title="Just for test…"></a>Just for test…</h1>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[用IAR写汇编]]></title>
       <url>http://yoursite.com/2016/07/25/%E7%94%A8IAR%E5%86%99%E6%B1%87%E7%BC%96/</url>
       <content type="html"><![CDATA[<h2 id="version：IAR7-5"><a href="#version：IAR7-5" class="headerlink" title="version：IAR7.5"></a>version：IAR7.5</h2><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><p>具体参见百度经验前四步。戳→<a href="http://jingyan.baidu.com/article/a3a3f8118e31468da3eb8a55.html" target="_blank" rel="external">这里</a>。<br>其中，在创建工程时，选择 asm 如图</p>
