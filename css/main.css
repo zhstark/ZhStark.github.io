@@ -1664,7 +1664,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f9dbe3;
+  background: #25afec;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2648,7 +2648,7 @@ b {
 }
 em,
 i {
-  color: #607d8b; /*#009688;*/
+  color: #137ca1; /*#009688;*/
 }
 table,
 pre,
@@ -2698,6 +2698,7 @@ q {
   color: #777 !important;
   quotes: none;
   margin-left: 1em;
+  font-style: italic;
 }
 blockquote::before,
 blockquote::after,
@@ -2721,26 +2722,24 @@ h6 {
 }
 h1 {
   font-size: 26px !important;
-/*border-bottom: 3px solid #ddd !important;*/
-  color: #14272d;
+  color: #425352;
 }
 h2 {
   font-size: 24px !important;
   border-bottom: 3px solid #eee !important;
-  color: #14272d;
+  color: #425352;
 }
 h3 {
   font-size: 20px;
   border-bottom: 2px solid #eee !important;
-  color: #193540;
+  color: #478c89;
 }
 h4 {
   font-size: 18px;
-  color: #1e3e49;
+  color: #6aafaa;
   border-bottom: 1px solid #eee !important;
 }
 h5 {
-  font-size: 18px;
-  color: #365862;
-  border-bottom: 1px solid #eee !important;
+  font-size: 16px;
+  color: #9fdded;
 }
