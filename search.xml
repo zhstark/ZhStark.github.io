@@ -126,21 +126,21 @@
       <content type="html"><![CDATA[<h2 id="version：IAR7-5"><a href="#version：IAR7-5" class="headerlink" title="version：IAR7.5"></a>version：IAR7.5</h2><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><p>具体参见百度经验前四步。戳→<a href="http://jingyan.baidu.com/article/a3a3f8118e31468da3eb8a55.html" target="_blank" rel="external">这里</a>。<br>其中，在创建工程时，选择 asm 如图</p>
 <p><img src="https://cl.ly/12191O460r0k/1.png" alt="1.png"></p>
 <a id="more"></a>
-<p>然后界面变成这样：<br><img src="http://upload-images.jianshu.io/upload_images/1369404-2261986ebe7db461.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
+<p>然后界面变成这样：<br><img src="https://cl.ly/3o0v3Y2L3Q2z/2.png" alt="2.png"></p>
 <p>删掉它自带的代码，改为下列代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">MODULE  ?cstartup</div><div class="line"></div><div class="line">       ;; Forward declaration of sections.</div><div class="line">       SECTION CSTACK:DATA:NOROOT(3)</div><div class="line"></div><div class="line">       SECTION .intvec:CODE:NOROOT(2)</div><div class="line"></div><div class="line">       ;EXTERN  __iar_program_start        </div><div class="line">       PUBLIC  __vector_table</div><div class="line"></div><div class="line">       DATA</div><div class="line"></div><div class="line">   __vector_table</div><div class="line">       DCD     sfe(CSTACK)</div><div class="line">       DCD     Reset_Handler             ; Reset Handler</div><div class="line"></div><div class="line">   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</div><div class="line">   ;;</div><div class="line">   ;; Default interrupt handlers.</div><div class="line">   ;;</div><div class="line">         THUMB</div><div class="line"></div><div class="line">       PUBWEAK Reset_Handler</div><div class="line">       SECTION .text:CODE:NOROOT:REORDER(2)</div><div class="line">   Reset_Handler</div><div class="line">       ;LDR     R0, =__iar_program_start</div><div class="line">       ;BX      R0</div><div class="line">         ;在这里放置汇编语言测试代码</div></pre></td></tr></table></figure>
 <p>再建一个文件，main.c，并添加到工程中，参考之前的百度经验链接第六、七步。</p>
 <p>在 main.c中写一个 main 函数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int mian()</div><div class="line">&#123;&#125;         //内容随意，可空</div></pre></td></tr></table></figure>
 <h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>对工程点右键，选择“<strong>Options</strong>”，</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-8700faebaa46a04d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png"></p>
+<p><img src="https://cl.ly/2k2t2E1G2J2s/3.png" alt="3.png"></p>
 <p>然后将各位置的配置修改为同下图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-d3095ef6b0512d3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-f9ca3e68c01faeaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-3867305fff5eb90b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="6.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-7be6d62197b88602.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="7.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-84bb9d52e8134a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1369404-73477c315856c336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9.png"></p>
+<p><img src="https://cl.ly/2p2w1y1V3F3J/4.png" alt="4.png"></p>
+<p><img src="https://cl.ly/0J3t3t1j320O/5.png" alt="5.png"></p>
+<p><img src="https://cl.ly/0k0y2O1e2F1m/6.png" alt="6.png"></p>
+<p><img src="https://cl.ly/1o2n3G1j3s08/7.png" alt="7.png"></p>
+<p><img src="https://cl.ly/37360Q30341D/8.png" alt="8.png"></p>
+<p><img src="https://cl.ly/223k043G2c2K/9.png" alt="9.png"></p>
 <p>然后就可以写汇编了~</p>
 ]]></content>
     </entry>
