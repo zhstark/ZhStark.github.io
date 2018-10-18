@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="技术," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="A Loser">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小豪's blog">
-<meta property="og:url" content="http://yoursite.com/categories/感悟/index.html">
+<meta name="description" content="该文章是记录我在捣鼓 pandoc 的时候出现 bug 并解决的过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="添加路径到 PATH 的问题">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/添加路径到 PATH 的问题/index.html">
 <meta property="og:site_name" content="小豪's blog">
-<meta property="og:description" content="A Loser">
+<meta property="og:description" content="该文章是记录我在捣鼓 pandoc 的时候出现 bug 并解决的过程。">
+<meta property="og:updated_time" content="2018-10-18T03:19:57.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小豪's blog">
-<meta name="twitter:description" content="A Loser">
+<meta name="twitter:title" content="添加路径到 PATH 的问题">
+<meta name="twitter:description" content="该文章是记录我在捣鼓 pandoc 的时候出现 bug 并解决的过程。">
 
 
 
@@ -113,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/感悟/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/17/添加路径到 PATH 的问题/"/>
 
 
-  <title> 分类: 感悟 | 小豪's blog </title>
+  <title> 添加路径到 PATH 的问题 | 小豪's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right  ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,47 +259,187 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        感悟
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                添加路径到 PATH 的问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-10-17T23:08:27-04:00" content="2018-10-17">
+              2018-10-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/记录/" itemprop="url" rel="index">
+                    <span itemprop="name">记录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/10/17/添加路径到 PATH 的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/10/17/添加路径到 PATH 的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/10/17/添加路径到 PATH 的问题/" class="leancloud_visitors" data-flag-title="添加路径到 PATH 的问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>该文章是记录我在捣鼓 pandoc 的时候出现 bug 并解决的过程。</p>
+<a id="more"></a>
+<p>由于我平时喜欢用 markdown 写作，如何编辑数学公式就成了难题。通过 pandoc，我可以在 markdown 里用 LaTeXiT 编辑公式，通过 pandoc 就可以导出显示公式的 pdf 了。但在我导出的时候，会有提示<code>pdflatex not found. pdflatex is needed for pdf output.</code>。我之前已经下载过 MacTex，所以<code>pdflatex</code>这东西我是一定安装好了，通过搜索，发现应该是路径没有导入 PATH 的问题。但是网上的教程对我来说并不管用，通过一系列折腾，终于搞清楚了问题所在。</p>
+<p>当我们安装了新的底层程序（如 MacTex，npm），需要将其路径放到 PATH 中，在很多网络教程中，都是使用的该语句：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/paths</div></pre></td></tr></table></figure>
+<p>将路径输入进文件，或者是：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> 'export <span class="built_in">PATH</span>="/usr/local/bin:$<span class="built_in">PATH</span>"' &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>然后用<code>echo $PATH</code> 查看，在某些情况下，该PATH 变量并没有任何改变，打开<code>/etc/paths</code> 文件，看到路径确实添加进去了。这是怎么回事呢？</p>
+<p>这时候<code>echo $PATH</code> 所显示的路径其实属于 <code>bash_profile</code>，我们用文本编辑器打开该文件，看到里面有<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export <span class="built_in">PATH</span>="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"</div></pre></td></tr></table></figure></p>
+<p>我们只需要将所要添加的路径续在<code>&quot; &quot;</code> 后面就可以了，记得用<code>:</code>与前面的路径分开。<br>eg：<br><code>export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Library/Tex/texbin&quot;</code><br>然后重启终端，再用<code>echo $PATH</code>，就发现已显示添加的路径。</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/07/31/《如何高效学习》读书感悟/" itemprop="url">
-              
-                <span itemprop="name">《如何高效学习》读书感悟</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果您喜欢，可以请我喝杯咖啡</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="https://s3.amazonaws.com/f.cl.ly/items/2L1g0m1F392H0h1O1t2N/IMG_6224.JPG?v=1f58a271" alt="Zhao Hao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="https://s3.amazonaws.com/f.cl.ly/items/0Z3M2Y3B2J0Y1f1X2N0F/IMG_6225.JPG?v=8bfd804b" alt="Zhao Hao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-07-31T17:26:29+08:00"
-              content="2016-07-31" >
-          07-31
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag">#技术</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/26/承受/" rel="next" title="承受">
+                <i class="fa fa-chevron-left"></i> 承受
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -306,6 +447,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/10/17/添加路径到 PATH 的问题/"
+           data-title="添加路径到 PATH 的问题" data-url="http://yoursite.com/2018/10/17/添加路径到 PATH 的问题/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -325,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://i.imgur.com/T7oGmZ3.jpg"
@@ -337,7 +495,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -345,7 +503,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -354,7 +512,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -406,6 +564,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -420,7 +589,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -508,6 +677,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

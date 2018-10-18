@@ -4,6 +4,22 @@
   
     
     <entry>
+      <title><![CDATA[添加路径到 PATH 的问题]]></title>
+      <url>http://yoursite.com/2018/10/17/%E6%B7%BB%E5%8A%A0%E8%B7%AF%E5%BE%84%E5%88%B0%20PATH%20%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>该文章是记录我在捣鼓 pandoc 的时候出现 bug 并解决的过程。</p>
+<a id="more"></a>
+<p>由于我平时喜欢用 markdown 写作，如何编辑数学公式就成了难题。通过 pandoc，我可以在 markdown 里用 LaTeXiT 编辑公式，通过 pandoc 就可以导出显示公式的 pdf 了。但在我导出的时候，会有提示<code>pdflatex not found. pdflatex is needed for pdf output.</code>。我之前已经下载过 MacTex，所以<code>pdflatex</code>这东西我是一定安装好了，通过搜索，发现应该是路径没有导入 PATH 的问题。但是网上的教程对我来说并不管用，通过一系列折腾，终于搞清楚了问题所在。</p>
+<p>当我们安装了新的底层程序（如 MacTex，npm），需要将其路径放到 PATH 中，在很多网络教程中，都是使用的该语句：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/paths</div></pre></td></tr></table></figure>
+<p>将路径输入进文件，或者是：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> 'export <span class="built_in">PATH</span>="/usr/local/bin:$<span class="built_in">PATH</span>"' &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>然后用<code>echo $PATH</code> 查看，在某些情况下，该PATH 变量并没有任何改变，打开<code>/etc/paths</code> 文件，看到路径确实添加进去了。这是怎么回事呢？</p>
+<p>这时候<code>echo $PATH</code> 所显示的路径其实属于 <code>bash_profile</code>，我们用文本编辑器打开该文件，看到里面有<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export <span class="built_in">PATH</span>="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"</div></pre></td></tr></table></figure></p>
+<p>我们只需要将所要添加的路径续在<code>&quot; &quot;</code> 后面就可以了，记得用<code>:</code>与前面的路径分开。<br>eg：<br><code>export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Library/Tex/texbin&quot;</code><br>然后重启终端，再用<code>echo $PATH</code>，就发现已显示添加的路径。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[承受]]></title>
       <url>http://yoursite.com/2017/05/26/%E6%89%BF%E5%8F%97/</url>
       <content type="html"><![CDATA[<h1 id="承受"><a href="#承受" class="headerlink" title="承受"></a>承受</h1><p>其实不只是孤独，还有懊恼，惭愧。事情怎么会发展到这一步，曾经的那么多美好都不复存在。</p>
