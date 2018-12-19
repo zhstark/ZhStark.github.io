@@ -1664,7 +1664,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #838e1b;
+  background: #06a8e4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2716,7 +2716,7 @@ h6 {
   padding: 10px;
   font-style: bold !important;
 /*color: #009688 !important;*/
-  text-align: left !important;
+  text-align: center !important;
 }
 h1 {
   font-size: 26px !important;
