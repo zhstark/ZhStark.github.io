@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-19T05:29:26.286Z</updated>
+  <updated>2018-12-19T05:39:51.817Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/12/19/%E4%B8%83%E7%89%9B%E5%9B%BE%E5%BA%8A%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88/"/>
     <id>http://yoursite.com/2018/12/19/七牛图床链接失效/</id>
     <published>2018-12-19T05:14:05.000Z</published>
-    <updated>2018-12-19T05:29:26.286Z</updated>
+    <updated>2018-12-19T05:39:51.817Z</updated>
     
     <content type="html"><![CDATA[<p>突然发现以前博客的图片都没有了，查了一下是因为七牛的连接更改问题（我之前用的都是七牛的图床）。</p><a id="more"></a><p>找了个弥补方法的<a href="https://blog.csdn.net/lkj345/article/details/83382636" target="_blank" rel="external">链接</a>。懒得吧图片折腾回来了，反正也没人看=。=</p><p>在七牛新建一个存储空间还能继续用，希望七牛不要出这种幺蛾子了吧。</p>]]></content>
     
@@ -31,6 +31,8 @@
     
     </summary>
     
+      <category term="记录" scheme="http://yoursite.com/categories/%E8%AE%B0%E5%BD%95/"/>
+    
     
   </entry>
   
@@ -39,7 +41,7 @@
     <link href="http://yoursite.com/2018/12/16/git%20push%20%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/"/>
     <id>http://yoursite.com/2018/12/16/git push 重新输入密码/</id>
     <published>2018-12-17T04:42:01.000Z</published>
-    <updated>2018-12-17T04:43:52.253Z</updated>
+    <updated>2018-12-19T05:39:55.679Z</updated>
     
     <content type="html"><![CDATA[<h3 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h3><p>通过 <code>https://</code> clone 下来的，输入：<code>git config --global credential.helper store</code></p><p>网上普遍推这种方案，但我没试过</p><p>这种方案的缺点在于账户密码完全明文存储在本地，不安全。</p><h3 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h3><p>通过<code>SSH</code> clone 下来的，但每次 git push 仍要输入密码。<br><a id="more"></a></p><p>首先检查根目录下有没有 <code>.ssh</code> 文件</p><ul><li><p>如果有，运行</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add -K ~/.ssh/id_rsa</div></pre></td></tr></table></figure></li><li><p>没有，</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C "email@mail.com"</div><div class="line"></div><div class="line">git config --global user.name "name"</div><div class="line"></div><div class="line">git config --global user.email "email@mail.com"</div><div class="line"></div><div class="line">#测试</div><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure></li></ul>]]></content>
     
@@ -51,6 +53,8 @@
 &lt;h3 id=&quot;第二种情况&quot;&gt;&lt;a href=&quot;#第二种情况&quot; class=&quot;headerlink&quot; title=&quot;第二种情况&quot;&gt;&lt;/a&gt;第二种情况&lt;/h3&gt;&lt;p&gt;通过&lt;code&gt;SSH&lt;/code&gt; clone 下来的，但每次 git push 仍要输入密码。&lt;br&gt;
     
     </summary>
+    
+      <category term="记录" scheme="http://yoursite.com/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
       <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
@@ -218,7 +222,7 @@
     <link href="http://yoursite.com/2016/07/25/%E7%94%A8IAR%E5%86%99%E6%B1%87%E7%BC%96/"/>
     <id>http://yoursite.com/2016/07/25/用IAR写汇编/</id>
     <published>2016-07-25T22:50:37.000Z</published>
-    <updated>2016-08-14T15:55:53.000Z</updated>
+    <updated>2018-12-19T05:40:20.497Z</updated>
     
     <content type="html"><![CDATA[<h2 id="version：IAR7-5"><a href="#version：IAR7-5" class="headerlink" title="version：IAR7.5"></a>version：IAR7.5</h2><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><p>具体参见百度经验前四步。戳→<a href="http://jingyan.baidu.com/article/a3a3f8118e31468da3eb8a55.html" target="_blank" rel="external">这里</a>。<br>其中，在创建工程时，选择 asm 如图</p><p><img src="https://cl.ly/12191O460r0k/1.png" alt="1.png"></p><a id="more"></a><p>然后界面变成这样：<br><img src="https://cl.ly/3o0v3Y2L3Q2z/2.png" alt="2.png"></p><p>删掉它自带的代码，改为下列代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">MODULE  ?cstartup</div><div class="line"></div><div class="line">       ;; Forward declaration of sections.</div><div class="line">       SECTION CSTACK:DATA:NOROOT(3)</div><div class="line"></div><div class="line">       SECTION .intvec:CODE:NOROOT(2)</div><div class="line"></div><div class="line">       ;EXTERN  __iar_program_start        </div><div class="line">       PUBLIC  __vector_table</div><div class="line"></div><div class="line">       DATA</div><div class="line"></div><div class="line">   __vector_table</div><div class="line">       DCD     sfe(CSTACK)</div><div class="line">       DCD     Reset_Handler             ; Reset Handler</div><div class="line"></div><div class="line">   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</div><div class="line">   ;;</div><div class="line">   ;; Default interrupt handlers.</div><div class="line">   ;;</div><div class="line">         THUMB</div><div class="line"></div><div class="line">       PUBWEAK Reset_Handler</div><div class="line">       SECTION .text:CODE:NOROOT:REORDER(2)</div><div class="line">   Reset_Handler</div><div class="line">       ;LDR     R0, =__iar_program_start</div><div class="line">       ;BX      R0</div><div class="line">         ;在这里放置汇编语言测试代码</div></pre></td></tr></table></figure><p>再建一个文件，main.c，并添加到工程中，参考之前的百度经验链接第六、七步。</p><p>在 main.c中写一个 main 函数。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int mian()</div><div class="line">&#123;&#125;         //内容随意，可空</div></pre></td></tr></table></figure><h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>对工程点右键，选择“<strong>Options</strong>”，</p><p><img src="https://cl.ly/2k2t2E1G2J2s/3.png" alt="3.png"></p><p>然后将各位置的配置修改为同下图：</p><p><img src="https://cl.ly/2p2w1y1V3F3J/4.png" alt="4.png"></p><p><img src="https://cl.ly/0J3t3t1j320O/5.png" alt="5.png"></p><p><img src="https://cl.ly/0k0y2O1e2F1m/6.png" alt="6.png"></p><p><img src="https://cl.ly/1o2n3G1j3s08/7.png" alt="7.png"></p><p><img src="https://cl.ly/37360Q30341D/8.png" alt="8.png"></p><p><img src="https://cl.ly/223k043G2c2K/9.png" alt="9.png"></p><p>然后就可以写汇编了~</p>]]></content>
     
@@ -229,10 +233,10 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="记录" scheme="http://yoursite.com/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="嵌入式" scheme="http://yoursite.com/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
