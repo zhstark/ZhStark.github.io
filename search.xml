@@ -4,6 +4,15 @@
   
     
     <entry>
+      <title><![CDATA[七牛图床链接失效]]></title>
+      <url>http://yoursite.com/2018/12/19/%E4%B8%83%E7%89%9B%E5%9B%BE%E5%BA%8A%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88/</url>
+      <content type="html"><![CDATA[<p>突然发现以前博客的图片都没有了，查了一下是因为七牛的连接更改问题（我之前用的都是七牛的图床）。</p>
+<p>找了个弥补方法的<a href="https://blog.csdn.net/lkj345/article/details/83382636" target="_blank" rel="external">链接</a>。懒得吧图片折腾回来了，反正也没人看-。-</p>
+<p>在七牛新建一个存储空间还能继续用，希望七牛不要出这种幺蛾子了吧。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[git push 重新输入密码]]></title>
       <url>http://yoursite.com/2018/12/16/git%20push%20%E9%87%8D%E6%96%B0%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/</url>
       <content type="html"><![CDATA[<h3 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h3><p>通过 <code>https://</code> clone 下来的，输入：<code>git config --global credential.helper store</code></p>

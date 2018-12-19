@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-17T04:43:52.253Z</updated>
+  <updated>2018-12-19T05:18:00.070Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>七牛图床链接失效</title>
+    <link href="http://yoursite.com/2018/12/19/%E4%B8%83%E7%89%9B%E5%9B%BE%E5%BA%8A%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88/"/>
+    <id>http://yoursite.com/2018/12/19/七牛图床链接失效/</id>
+    <published>2018-12-19T05:14:05.000Z</published>
+    <updated>2018-12-19T05:18:00.070Z</updated>
+    
+    <content type="html"><![CDATA[<p>突然发现以前博客的图片都没有了，查了一下是因为七牛的连接更改问题（我之前用的都是七牛的图床）。</p><p>找了个弥补方法的<a href="https://blog.csdn.net/lkj345/article/details/83382636" target="_blank" rel="external">链接</a>。懒得吧图片折腾回来了，反正也没人看-。-</p><p>在七牛新建一个存储空间还能继续用，希望七牛不要出这种幺蛾子了吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;突然发现以前博客的图片都没有了，查了一下是因为七牛的连接更改问题（我之前用的都是七牛的图床）。&lt;/p&gt;
+&lt;p&gt;找了个弥补方法的&lt;a href=&quot;https://blog.csdn.net/lkj345/article/details/83382636&quot; target=&quot;_b
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>git push 重新输入密码</title>

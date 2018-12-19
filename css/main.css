@@ -1664,7 +1664,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffab8;
+  background: #34bd4f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2636,9 +2636,9 @@ body {
   }
 }
 p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 2em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 /* color:#424242;*/
   margin: 1.5em 5px !important;
 }
@@ -2713,12 +2713,10 @@ h4,
 h5,
 h6 {
   margin: 20px 0 10px;
-  padding: 0;
+  padding: 10px;
   font-style: bold !important;
 /*color: #009688 !important;*/
-  text-align: center !important;
-  margin: 1.5em 5px !important;
-  padding: 0.5em 1em !important;
+  text-align: left !important;
 }
 h1 {
   font-size: 26px !important;
