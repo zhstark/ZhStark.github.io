@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python学习笔记1]]></title>
+    <url>%2F2019%2F02%2F08%2Fpython%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%2F</url>
+    <content type="text"><![CDATA[如果要让 Python 打印出指定的文字，可以用print( )，把打印的文字用单引号或双引号括起来。input( )函数输入，input 返回的数据类型是 str# 开头的是注释 数据类型 整数 浮点数 正负无穷 float(&quot;inf&quot;) and float(&quot;-inf&quot;) 字符串 字符串是以单引号‘或双引号“括起来的文本。 还可以用r&#39; &#39;表示&#39; &#39;内部不转义。 1print(r&apos;\\\t\\\&apos;)\\\t\\\``` [] list；( ) tuple； 方法：append( ), pop( ), insert( a, b) { }dictionary dic[’a’]=b dic.pop(&#39;a&#39;) set: key 的集合 但不存储value。 创建一个 set 需要提供一个 list 作为输入集合。 方法：add(key), remove(key), set 可以看成数学意义上的无序和无重复元素的集合 list 方法 l.count(1) 值为1的有几个 b=a[:] make a copy! string 方法 set 方法 dictionary 方法 dic.pop(key) 大小写12345678910str="www.zhstark.com"print(str.upper() )# 把所有字符中的小写字母转换成大写字母print(str.lower() ) # 把所有字符中的大写字母转换成小写字母print(str.capitalize() ) # 把第一个字母转化为大写字母，其余小写print(str.title() ) # 把每个单词的第一个字母转化为大写，其余小写WWW.RUNOOB.COMwww.runoob.comWww.runoob.comWww.Runoob.Com 判断是否是数字或字母12345678str 是字符串str.isalnum() #所有字符都是数字或者字母str.isalpha() #所有字符都字母str.isdigit() #所有字符都是数字str.islower() #所有字符都是小写str.isupper()str.istitle() #所有单词都是首字母大写str.isspace() #所有字符都是空白字符、\t、\n、\r 格式化12345678&gt;&gt;&gt; 'hello, %s' % 'world'hello, world'&gt;&gt;&gt; 'Hi, %s, you have $%d.' % ('Micheal', 99999)%d 整数%f 浮点数%s 字符串%x 十六进制整数 函数定义一个函数要使用的饭语句，依次写出函数名，括号，参数和冒号： 定义一个什么也不做的空函数，可以用 pass 语句：12def nop(): pass pass可以用来做占位符 位置参数 power(x):`123456789101112131415161718- 默认参数 ```def power(x, n=2):`- 可变参数 `def calc(*number):` 参数 number 接收到的是一个 tuple- 关键字参数 `def person(name, age, **kw):`- 命名关键字参数 `def person(name, age, *, city, job):` `def person(name, age, *args, city, job):` 命名关键字参数必须传入参数名。## 特性##### 切片```pythonL[0:3]L[:3]L[-2:] 迭代我们可以通过 for 循环来遍历一个 list或 tuple，这种遍历我们称为迭代 ( Iteration )内置的 enumerate 函数可以把一个 list 变成索引-元素对 12for i, value in enumerate(['A','B','C',]): print(i, value) 列表生成器1[k*k for k in range(1,11)] 生成器一边循环一边计算的机制，称为生成器：generator。可以通过next()函数获得 generator 的下一个返回值。 第一种方法，把列表生成式的[] 改成()，就创建了一个 generator g=(x*x for x in range(10)） 第二种方法，如果一个函数定义中包含yield关键字，那么这个函数就不再是普通函数，而是一个 generator。 1234567def fib(max): n,a,b=0,0,1 while n&lt;max: yield b a,b=b, a+b n=n+1 return &apos;done&apos; 迭代器可以被 next() 函数调用并不断返回下一个值得对象成为迭代器： Iterator。把 list, dict, str 等 Iterable 变成 Iterator 可以使用 iter() 函数：12&gt;&gt;&gt; isinstance(iter(&apos;abc&apos;), Iterator）True 位操作符 Othereval( )eval() 函数用来执行一个字符串表达式，并返回表达式的值。 range( ) 倒序range(a,b,-1) enumerate( ) 函数enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中. 12345678910111213&gt;&gt;&gt;seasons = ['Spring', 'Summer', 'Fall', 'Winter']&gt;&gt;&gt; list(enumerate(seasons))[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]&gt;&gt;&gt; list(enumerate(seasons, start=1)) # 下标从 1 开始[(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]&gt;&gt;&gt;seq = ['one', 'two', 'three']&gt;&gt;&gt; for i, element in enumerate(seq):... print i, element...0 one1 two2 three filter( ) 函数filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回一个迭代器对象，如果要转换为列表，可以使用 list() 来转换。 该接收两个参数，第一个为函数，第二个为序列，序列的每个元素作为参数传递给函数进行判，然后返回 True 或 False，最后将返回 True 的元素放到新列表中。 12345678910#!/usr/bin/python3def is_odd(n): return n % 2 == 1tmplist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])newlist = list(tmplist)print(newlist)&gt;&gt;&gt;[1, 3, 5, 7, 9] zip( ) 函数zip() 函数用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的对象，这样做的好处是节约了不少的内存。return min((b-a) for a, b in zip(m, m[1:])) divmod( )函数python divmod() 函数把除数和余数运算结果结合起来，返回一个包含商和余数的元组(a // b, a % b)。 join( ) 函数‘s’.join(str)s: 分隔符，可以为空str：要连接的元素序列、字符串、元组、字典上面的语法即：以sep作为分隔符，将seq所有的元素合并成一个新的字符串 返回值：返回一个以分隔符sep连接各个元素后生成的字符串 __contains__在类中定义，在外面当用到 for i in class 时，in 调用该函数in = contains()x.__contain__(y)&lt;==&gt; y in x importcollections.CounterCounter类的目的是用来跟踪值出现的次数。它是一个无序的容器类型，以字典的键值对形式存储，其中元素作为key，其计数作为value。12&gt;&gt;&gt; c = Counter() # 创建一个空的Counter类&gt;&gt;&gt; c = Counter('gallahad') # 从一个可iterable对象（list、tuple、dict、字符串等）创建 collections.dequedeque 是双边队列1234567891011d = collections.deque([])d.append('a') # 在最右边添加一个元素，此时 d=deque('a')d.appendleft('b') # 在最左边添加一个元素，此时 d=deque(['b', 'a'])d.extend(['c','d']) # 在最右边添加所有元素，此时 d=deque(['b', 'a', 'c', 'd'])d.extendleft(['e','f']) # 在最左边添加所有元素，此时 d=deque(['f', 'e', 'b', 'a', 'c', 'd'])d.pop() # 将最右边的元素取出，返回 'd'，此时 d=deque(['f', 'e', 'b', 'a', 'c'])d.popleft() # 将最左边的元素取出，返回 'f'，此时 d=deque(['e', 'b', 'a', 'c'])d.rotate(-2) # 向左旋转两个位置（正数则向右旋转），此时 d=deque(['a', 'c', 'e', 'b'])d.count('a') # 队列中'a'的个数，返回 1d.remove('c') # 从队列中将'c'删除，此时 d=deque(['a', 'e', 'b'])d.reverse() # 将队列倒序，此时 d=deque(['b', 'e', 'a']) collections.defaultdict( )免去查看字典里是否有 key 的操作，如果没有直接加上123456789101112# 普通 dictionarygraph=&#123;&#125;for u, v, w in times: if u not in graph: graph[u]=[(v, w)] else: graph[u].append((v, w))# 骚操作graph=collections.defaultdict(list)for u, v, w in times: graph[u].append((v,w)) heapq最小堆（优先队列）123456789101112131415161718192021222324252627282930&gt;&gt;&gt; l=[4,2,5,7,1]&gt;&gt;&gt; heapq.heapify(l)&gt;&gt;&gt; l[1, 2, 5, 7, 4]&gt;&gt;&gt; h=[] #定义一个list&gt;&gt;&gt; import heapq #引入heapq模块&gt;&gt;&gt; h[]&gt;&gt;&gt; heappush(h,5) #向堆中依次增加数值&gt;&gt;&gt; heappush(h,2)&gt;&gt;&gt; heappush(h,3)&gt;&gt;&gt; heappush(h,9)&gt;&gt;&gt; h #h的值[2, 5, 3, 9]&gt;&gt;&gt; heappop(h) #从h中删除最小的，并返回该值2&gt;&gt;&gt; h[3, 5, 9]&gt;&gt;&gt; h.append(1) #注意，如果不是压入堆中，而是通过append追加一个数值&gt;&gt;&gt; h #堆的函数并不能操作这个增加的数值，或者说它堆对来讲是不存在的[3, 5, 9, 1]&gt;&gt;&gt; heappop(h) #从h中能够找到的最小值是3,而不是13&gt;&gt;&gt; heappush(h,2) #这时，不仅将2压入到堆内，而且1也进入了堆。&gt;&gt;&gt; h[1, 2, 9, 5]&gt;&gt;&gt; heappop(h) #操作对象已经包含了11 函数式编程高阶函数 f=abs 函数本身可以赋值给变量，即变量可以指向函数。既然变量可以指向函数，函数的参数能接受变量，那么一个函数就可以接受另一个函数作为参数，这种函数就称之为高级函数 mapmap() 函数接受两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，，并把结果作为新的Iterator返回。 123456789&gt;&gt;&gt; def f(x):... return x * x...&gt;&gt;&gt; r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])&gt;&gt;&gt; list(r)[1, 4, 9, 16, 25, 36, 49, 64, 81]&gt;&gt;&gt; list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))['1', '2', '3', '4', '5', '6', '7', '8', '9'] 感觉这个跟 filter( ） 有点像啊，filter( )接受一个是函数，一个是 list，返回一个迭代器，将返回 True 的放进去。 reduce 函数reduce( )把一个函数作用在一个序列上，这个函数必须接受两个参数，reduce吧结果继续和序列的下一个函数做累积计算。 123456789101112131415reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)&gt;&gt;&gt; from functools import reduce&gt;&gt;&gt; def add(x, y):... return x + y...&gt;&gt;&gt; reduce(add, [1, 3, 5, 7, 9])25&gt;&gt;&gt; from functools import reduce&gt;&gt;&gt; def fn(x, y):... return x * 10 + y...&gt;&gt;&gt; reduce(fn, [1, 3, 5, 7, 9])13579 sorted( ) 函数他可以接受一个key函数来实现自定义排序。 12&gt;&gt;&gt; sorted([36, 5, -12, 9, -21], key=abs)[5, 9, -12, -21, 36] 还可反向排序，传入第三个参数： reverse=True 12&gt;&gt;&gt; sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)['Zoo', 'Credit', 'bob', 'about'] 匿名函数 lambda x: x+x]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>tech</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[七牛图床链接失效]]></title>
     <url>%2F2018%2F12%2F19%2F%E4%B8%83%E7%89%9B%E5%9B%BE%E5%BA%8A%E9%93%BE%E6%8E%A5%E5%A4%B1%E6%95%88%2F</url>
     <content type="text"><![CDATA[突然发现以前博客的图片都没有了，查了一下是因为七牛的连接更改问题（我之前用的都是七牛的图床）。 找了个弥补方法的链接。懒得吧图片折腾回来了，反正也没人看=。= 在七牛新建一个存储空间还能继续用，希望七牛不要出这种幺蛾子了吧。]]></content>
@@ -16,7 +27,7 @@
         <category>记录</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>tech</tag>
       </tags>
   </entry>
   <entry>
@@ -27,7 +38,7 @@
         <category>记录</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>tech</tag>
       </tags>
   </entry>
   <entry>
@@ -89,7 +100,7 @@
         <category>记录</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>tech</tag>
       </tags>
   </entry>
 </search>
