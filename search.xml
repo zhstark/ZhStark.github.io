@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C++函数的参数的不同传递方式]]></title>
+    <url>%2F2019%2F02%2F28%2FC-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%8D%E5%90%8C%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[面试要用 C++，没用 C++写过任何 project， 从头开始学 妈耶可烦死我了。 刷题时看到关于 C++函数的参数传递有好多形式，有直接传的，有传指针的，还有传&amp;，最后一个没怎么见过。找了些资料，发现这些对应的是值传递，指针传递和引用传递。 在这个博客找到了非常深入的解释，摘抄部分如下： （注：函数中用于接收传递值的变量叫形参，传递给函数的值叫实参） 值传递： 形参是实参的拷贝，改变形参的值并不会影响外部实参的值。从被调用函数的角度来说，值传递是单向的（实参-&gt;形参），参数的值只能传入，不能传出。当函数内部需要修改参数，并且不希望这个改变影响调用者时，采用值传递。 指针传递： 形参为指向实参地址的指针，当对形参的指向操作时，就相当于对实参本身进行的操作 引用传递： 形参相当于是实参的“别名”，对形参的操作其实就是对实参的操作，在引用传递过程中，被调函数的形式参数虽然也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参的任何操作都被处理成间接寻址，即通过栈中存放的地址访问主调函数中的实参变量。正因为如此，被调函数对形参做的任何操作都影响了主调函数中的实参变量。]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>tech</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[github page自定义域名的 ip 过时]]></title>
     <url>%2F2019%2F02%2F16%2Fgithub%20page%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E7%9A%84%20ip%20%E8%BF%87%E6%97%B6%2F</url>
     <content type="text"><![CDATA[今天改博客的时候，每次部署都会收到 github 的邮件说： The custom domain for your GitHub Pages site is pointed at an outdated IP address. You must update your site’s DNS records if you’d like it to be available via your custom domain. 因为现在 github page 现在的ip换了，之前自己的域名绑定的ip 不再试用。 解决之道： 登录自己的域名管理网站（我的是托管到 DNSPOD 上的），将之前的 ip 为192.30.252.153的关掉，添加 185.199.108.153]]></content>
