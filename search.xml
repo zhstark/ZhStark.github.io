@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[重学 C++]]></title>
+    <url>%2F2019%2F03%2F09%2FC-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[之前学的不够扎实，更加系统、贴近底层的学一遍。非新手笔记，都是比较基础的东西，但没有最最基础的东西 零main 函数的返回类型必须是int，返回 0 表明成功。 curly brace 花括号 block of statements 语句块 assignment 赋值 windows: .\表示该文件在当前目录中，Unix: ./ 表示可执行文件在当前目录中。 stream：流，一个流就是一个字符序列。随着时间的推移，字符是顺序生成或消耗的。 cin cout cerr clog &lt;&lt; 输出运算符，返回其左侧的运算对象 endl是一个被称为操作符(manipulator)的特殊值，写入endl的效果是结束当前行，并将于设备关联的 buffer 中的内容刷到设备中。缓冲刷新操作可以保证到目前为止程序所产生的所有输出都真正写入输出流中，而不是仅停留在内存中等待写入流。 :: 作用域运算符 &gt;&gt; 输入运算符，返回左侧运算对象 当用一个istream 对象作为判断条件时，其效果是检测stream 的状态。当流未遇到错误，即为true。但遇到文件结束符（ctrl+D in Mac）或遇到无效输入，状态变为无效，条件为 false。 文件重定向 将标准输入和标准输出与命名文件关联起来。1$ addItems &lt;infile&gt;outfile addItem 为编译后的可执行文件，上述命令会从一个名为 infile 的文件读取销售记录，并将输出结果写入一个名为 outfile 的文件中。123456789#include&lt;iostream&gt;#include "Sale_item.h"int main()&#123; Sale_item item1, item2; std::cin&gt;&gt;item1&gt;&gt;item2; std::cout&lt;&lt;item1+item2&lt;&lt;std::endl; return 0;&#125; 一可寻址的最小内存块称为 字节 (byte)，存储的基本单元称为 字 (word)，一个字节由八个比特（bit）构成，一个字由32或64比特构成。 char 8位（bits），一字节（bytes） int 32位，四字节 float ，32位，6位有效数字 double 64位，10位有效数字 char16_t &amp; char32_t 为 Unicode 字符 short 16bits long 32 bits long long 64 bits long double 96 or 128 bits 0开头为八进制，0x 开头十六进制 执行浮点数运算选用 double， 因为 float 通常精度不够，而且双精度浮点数和单精度浮点数的计算代价差不多。 勿混用有符号类型与无符号类型如果 int 和无符号运算，那么 int 值会自动转变为无符号数。 当从无符号数中减去一个值时，不管这个数是不是无符号数，我们都必须确保结果不能是一个负值。 1234unsigned int u1=42,u2=10;cout&lt;&lt;u2-u1&lt;&lt;endl;输出：4294967264 浮点数科学计数法表示：指数部分用 E 或 e 标识: 24E2->2400 引用（reference）为对象起了另外一个名字，引用必须被初始化。通过将声明符写成&amp;d的形式来定义引用类型，其中d是声明的变量名。一旦初始化完成，引用将和它的初始值对象一直绑定在一起。即定义了一个引用后，对其进行的所有操作都是在与之绑定的对象上进行的。 空指针不指向任何对象，在试图使用一个指针之前代码可以先检测它是否为空。123int *p1=nullptr; // &lt;--- bestint *p2=0;int *p3=NULL; //#include &lt;cstdlib&gt; 把 int 变量直接给指针是错误的，即使该值是0。 指向指针的引用 12345int i=42;int *p;int *&amp;r=p; // r 是一个对指针 p 的引用r=&amp;i; // p 指向 r*r=0; 从右向左阅读 r 的定义，首先是&amp;，说明 r 是一个引用，其次是*，表示 r 引用的是指针，最后int，r 引用的是 int 指针。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>tech, C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C++函数的参数的不同传递方式]]></title>
     <url>%2F2019%2F02%2F28%2FC-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%8D%E5%90%8C%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[面试要用 C++，没用 C++写过任何 project， 从头开始学 妈耶可烦死我了。 刷题时看到关于 C++函数的参数传递有好多形式，有直接传的，有传指针的，还有传&amp;，最后一个没怎么见过。找了些资料，发现这些对应的是值传递，指针传递和引用传递。 在这个博客找到了非常深入的解释，摘抄部分如下： （注：函数中用于接收传递值的变量叫形参，传递给函数的值叫实参） 值传递： 形参是实参的拷贝，改变形参的值并不会影响外部实参的值。从被调用函数的角度来说，值传递是单向的（实参-&gt;形参），参数的值只能传入，不能传出。当函数内部需要修改参数，并且不希望这个改变影响调用者时，采用值传递。1void f1(int n)&#123;n++;&#125; // 外面传来的 n 不变 指针传递： 形参为指向实参地址的指针，当对形参的指向操作时，就相当于对实参本身进行的操作1void f2(int *n)&#123;*n=*n+1;&#125; //外面的 n 也变 引用传递： 形参相当于是实参的“别名”，对形参的操作其实就是对实参的操作，在引用传递过程中，被调函数的形式参数虽然也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参的任何操作都被处理成间接寻址，即通过栈中存放的地址访问主调函数中的实参变量。正因为如此，被调函数对形参做的任何操作都影响了主调函数中的实参变量。 12345void f3(int &amp;n)&#123;n++;&#125; ////外面的 n 也变//对引用传递，传入的时候只是传 n，不同于指针传 &amp;nint n=2;f3(n);]]></content>
