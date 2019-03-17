@@ -87,7 +87,7 @@
 <meta property="og:url" content="http://zhstark.com/2019/03/16/重学cpp-const/index.html">
 <meta property="og:site_name" content="小豪's blog">
 <meta property="og:description" content="指向常量的指针，常量指针，指向常量的常量指针 = =！">
-<meta property="og:updated_time" content="2019-03-17T14:54:38.859Z">
+<meta property="og:updated_time" content="2019-03-17T14:58:22.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学C++2  const">
 <meta name="twitter:description" content="指向常量的指针，常量指针，指向常量的常量指针 = =！">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  634
+                  686
                 </span>
               
 
@@ -396,6 +396,7 @@
 <blockquote>
 <p>弄清声明含义可以从右向左读。</p>
 </blockquote>
+<h3 id="顶层-const-amp-底层-const"><a href="#顶层-const-amp-底层-const" class="headerlink" title="顶层 const &amp; 底层 const"></a>顶层 const &amp; 底层 const</h3><p>顶层 const 可以表示任意的对象是常量（如表明指针本身是一个常量），而底层 const 表示指针所指的对象使一个常量。</p>
 <h2 id="常量表达式-const-expression"><a href="#常量表达式-const-expression" class="headerlink" title="常量表达式 const expression"></a>常量表达式 const expression</h2><p>常量表达式是指值不变并且在编译过程就能得到计算结果的表达式。</p>
 <p>C++11允许将变量声明为 <code>constexpr</code>类型以便由编译器来验证变量的值是否是一个常量表达式。声明为 constexpr 的变量一定是一个常量，而且必须用常量表达式初始化。（还有 constepr 函数，在编译时计算出结果）。</p>
 <p><strong>在 constexpr 声明中如果定义了一个指针，限定符 constexpr 仅对指针有效，与指针所指的对象无关</strong>。</p>
@@ -637,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">1.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-指针"><span class="nav-number">2.</span> <span class="nav-text">const 指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量表达式-const-expression"><span class="nav-number">3.</span> <span class="nav-text">常量表达式 const expression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型别名"><span class="nav-number">3.1.</span> <span class="nav-text">类型别名</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">1.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-指针"><span class="nav-number">2.</span> <span class="nav-text">const 指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层-const-amp-底层-const"><span class="nav-number">2.1.</span> <span class="nav-text">顶层 const & 底层 const</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量表达式-const-expression"><span class="nav-number">3.</span> <span class="nav-text">常量表达式 const expression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型别名"><span class="nav-number">3.1.</span> <span class="nav-text">类型别名</span></a></li></ol></li></ol></div>
             
 
           </div>
