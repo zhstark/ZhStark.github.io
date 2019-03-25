@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhstark.com/"/>
-  <updated>2019-03-17T14:58:22.252Z</updated>
+  <updated>2019-03-25T00:43:02.339Z</updated>
   <id>http://zhstark.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重学c++3 decltype &amp; string</title>
+    <link href="http://zhstark.com/2019/03/24/%E9%87%8D%E5%AD%A6cpp-decltype-and-string/"/>
+    <id>http://zhstark.com/2019/03/24/重学cpp-decltype-and-string/</id>
+    <published>2019-03-25T00:40:32.000Z</published>
+    <updated>2019-03-25T00:43:02.339Z</updated>
+    
+    <content type="html"><![CDATA[<p>decltype 返回方程的返回类型</p><a id="more"></a><h2 id="三-decltype"><a href="#三-decltype" class="headerlink" title="三 decltype"></a>三 decltype</h2><p>decltype的作用是选择并返回操作数的数据类型<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">decltype</span>(f()) s=x;<span class="comment">//s 的类型为函数 f 的返回值类型</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> c1=<span class="number">0</span>, &amp;c2=c1;</div><div class="line"><span class="keyword">decltype</span>(c1) x=<span class="number">0</span>;<span class="comment">//const int x</span></div><div class="line"><span class="keyword">decltype</span>(c2) y=x;<span class="comment">//const int &amp;y=x;</span></div></pre></td></tr></table></figure></p><p>如果 decltype 的表达式加上了一对括号，这样的 decltype 会得到一个引用类型</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line"><span class="keyword">decltype</span>((i)) d=i;<span class="comment">//d是一个 int&amp; 引用变量</span></div></pre></td></tr></table></figure><h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><h3 id="using-声明"><a href="#using-声明" class="headerlink" title="using 声明"></a>using 声明</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>::name;</div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</div></pre></td></tr></table></figure><p>头文件的代码一般不能使用 using 声明，因为头文件的内容会拷贝到所有引用他的文件中去。</p><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><h4 id="getline-函数"><a href="#getline-函数" class="headerlink" title="getline 函数"></a>getline 函数</h4><p><strong>在最终得到的字符串中保留输入时的空白符</strong><br><code>getline(ins, s)</code> 第一个参数是输入流，第二个参数是 string。函数从输入流中读入内容，直到遇到换行符为止。</p><p><strong>输入运算符作为判断条件</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;value)</div></pre></td></tr></table></figure></p><p><code>cin&gt;&gt;value</code> 返回 cin，一个<code>istream</code> 对象。当使用<code>istream</code>对象作为判断条件时，效果是检测流的状态。当遇到文件结束符或一个无效的输入时，判断为假。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;<span class="built_in">string</span> line;</div><div class="line"><span class="keyword">while</span>(getline(<span class="built_in">cin</span>, line))</div><div class="line"><span class="built_in">cout</span>&lt;&lt;line&lt;&lt;<span class="built_in">endl</span>;</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h4 id="string-相加"><a href="#string-相加" class="headerlink" title="string 相加"></a>string 相加</h4><p>当把 string 对象和字符字面值及字符串字面值混在一条语句中使用，必须确保每个加法运算符的两侧的运算对象至少有一个是 string<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> s4=s1+<span class="string">","</span>;<span class="comment">//right</span></div><div class="line"><span class="built_in">string</span> s5= <span class="string">"hello"</span>+<span class="string">","</span>; <span class="comment">//wrong</span></div><div class="line"><span class="built_in">string</span> s6=s1+<span class="string">","</span>+<span class="string">"hjello"</span>;<span class="comment">//right</span></div><div class="line"><span class="built_in">string</span> s7=<span class="string">"hello"</span>+<span class="string">","</span>+s1;<span class="comment">//wrong</span></div></pre></td></tr></table></figure></p><h4 id="处理字符"><a href="#处理字符" class="headerlink" title="处理字符"></a>处理字符</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></div><div class="line"><span class="built_in">isalnum</span>(c)</div><div class="line"><span class="built_in">isalpha</span>(c)</div><div class="line"><span class="built_in">isdigit</span>(c)</div><div class="line"><span class="built_in">islower</span>(c)</div><div class="line"><span class="built_in">isupper</span>(c)</div><div class="line"><span class="built_in">isspace</span>(c)</div><div class="line"><span class="built_in">tolower</span>(c)</div><div class="line"><span class="built_in">toupper</span>(c)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;decltype 返回方程的返回类型&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://zhstark.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C++" scheme="http://zhstark.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>重学C++2  const</title>
