@@ -1542,6 +1542,9 @@ pre .javascript .function {
     display: none;
   }
 }
+.posts-expand .post-comments-count {
+  display: none;
+}
 .post-button {
   margin-top: 40px;
 }
@@ -1940,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f166a8;
+  background: #ff5b78;
 }
 .links-of-blogroll {
   font-size: 13px;
