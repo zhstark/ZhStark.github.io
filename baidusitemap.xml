@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://zhstark.com/2019/03/24/%E9%87%8D%E5%AD%A6cpp-decltype-and-string/</loc>
-    <lastmod>2019-03-25</lastmod>
+    <loc>http://zhstark.com/2019/03/25/%E9%87%8D%E5%AD%A6cpp-array/</loc>
+    <lastmod>2019-03-26</lastmod>
   </url>  <url>
     <loc>http://zhstark.com/2019/03/16/%E9%87%8D%E5%AD%A6cpp-const/</loc>
-    <lastmod>2019-03-17</lastmod>
+    <lastmod>2019-03-26</lastmod>
+  </url>  <url>
+    <loc>http://zhstark.com/2019/03/24/%E9%87%8D%E5%AD%A6cpp-decltype-and-string/</loc>
+    <lastmod>2019-03-25</lastmod>
   </url>  <url>
     <loc>http://zhstark.com/2019/03/09/%E9%87%8D%E5%AD%A6%20cpp/</loc>
     <lastmod>2019-03-17</lastmod>

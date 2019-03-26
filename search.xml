@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[重学cpp 4 数组]]></title>
+    <url>%2F2019%2F03%2F25%2F%E9%87%8D%E5%AD%A6cpp-array%2F</url>
+    <content type="text"><![CDATA[复杂的数组声明12345int *ptrs[10]; //ptrs 是一个含有10个 整型指针 的数组int &amp;refs[10]= arr; // Wrong，不存在引用的数组int (*P)[10]=&amp;arr; // P是一个指针，指向一个含有10个整数的数组int (&amp;arrRef)[10]=arr; //arrRef 引用一个含有10个整数的数组int * (&amp;arr)[10]=ptrs; //arr 是数组的引用，该数组含有10个指针 指针与数组123456string nums[]=&#123;"onr", "two", "three"&#125;;string *p=nums; // string *p=&amp;nums[0];auto p2(nums); //p2为指向字符串的指针，指向 nums 的第一个元素auto p2(&amp;nums[0]);*p2="sfa"; 当用decltype时，跟上面又不一样了，不再返回指针，而是返回数组 123int ia[]=&#123;1,2,3,4,5,6,7,8,9,0&#125;;decltype(ia) ia2=&#123;0,1,2,3,4,5,6,7,8,9&#125;; //decltype 返回的类型是由10个整数构成的数组 把指针当迭代器重点在于找到终止点。 12345int *e=&amp;arr[10]; //指向 arr 最后一个元素的下一个位置。for(int *b=arr; b!=e; ++b)&#123;&#125;// orint *e=end(arr); //#include &lt;iterator&gt;int *b=begin(arr); //This is better 二维数组初始化 1234567int a[3][4]=&#123; &#123;0,1,2,3&#125;, &#123;4,5,6,7&#125;, &#123;8,9,0,1&#125;&#125;;int a[3][4]=&#123;0,1,2,3,4,5,6,7,8,9,0,1&#125;; //same]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[重学c++3 decltype & string]]></title>
     <url>%2F2019%2F03%2F24%2F%E9%87%8D%E5%AD%A6cpp-decltype-and-string%2F</url>
     <content type="text"><![CDATA[decltype 返回方程的返回类型 三 decltypedecltype的作用是选择并返回操作数的数据类型12345decltype(f()) s=x; //s 的类型为函数 f 的返回值类型const int c1=0, &amp;c2=c1;decltype(c1) x=0; //const int xdecltype(c2) y=x; //const int &amp;y=x; 如果 decltype 的表达式加上了一对括号，这样的 decltype 会得到一个引用类型 12int i=0;decltype((i)) d=i; // d是一个 int&amp; 引用变量 四using 声明123using namespace::name;using std::cin; 头文件的代码一般不能使用 using 声明，因为头文件的内容会拷贝到所有引用他的文件中去。 Stringgetline 函数在最终得到的字符串中保留输入时的空白符getline(ins, s) 第一个参数是输入流，第二个参数是 string。函数从输入流中读入内容，直到遇到换行符为止。 输入运算符作为判断条件1while(cin&gt;&gt;value) cin&gt;&gt;value 返回 cin，一个istream 对象。当使用istream对象作为判断条件时，效果是检测流的状态。当遇到文件结束符或一个无效的输入时，判断为假。123456int main()&#123;string line; while(getline(cin, line)) cout&lt;&lt;line&lt;&lt;endl; return 0;&#125; string 相加当把 string 对象和字符字面值及字符串字面值混在一条语句中使用，必须确保每个加法运算符的两侧的运算对象至少有一个是 string1234string s4=s1+","; //rightstring s5= "hello"+","; //wrongstring s6=s1+","+"hjello"; //rightstring s7="hello"+","+s1; //wrong 处理字符123456789#include &lt;cctype&gt;isalnum(c)isalpha(c)isdigit(c)islower(c)isupper(c)isspace(c)tolower(c)toupper(c)]]></content>
@@ -19,7 +30,7 @@
         <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>tech C++</tag>
+        <tag>tech, C++</tag>
       </tags>
   </entry>
   <entry>
