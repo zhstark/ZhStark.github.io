@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[重学cpp 4 数组]]></title>
+    <title><![CDATA[重学cpp4 数组]]></title>
     <url>%2F2019%2F03%2F25%2F%E9%87%8D%E5%AD%A6cpp-array%2F</url>
-    <content type="text"><![CDATA[复杂的数组声明12345int *ptrs[10]; //ptrs 是一个含有10个 整型指针 的数组int &amp;refs[10]= arr; // Wrong，不存在引用的数组int (*P)[10]=&amp;arr; // P是一个指针，指向一个含有10个整数的数组int (&amp;arrRef)[10]=arr; //arrRef 引用一个含有10个整数的数组int * (&amp;arr)[10]=ptrs; //arr 是数组的引用，该数组含有10个指针 指针与数组123456string nums[]=&#123;"onr", "two", "three"&#125;;string *p=nums; // string *p=&amp;nums[0];auto p2(nums); //p2为指向字符串的指针，指向 nums 的第一个元素auto p2(&amp;nums[0]);*p2="sfa"; 当用decltype时，跟上面又不一样了，不再返回指针，而是返回数组 123int ia[]=&#123;1,2,3,4,5,6,7,8,9,0&#125;;decltype(ia) ia2=&#123;0,1,2,3,4,5,6,7,8,9&#125;; //decltype 返回的类型是由10个整数构成的数组 把指针当迭代器重点在于找到终止点。 12345int *e=&amp;arr[10]; //指向 arr 最后一个元素的下一个位置。for(int *b=arr; b!=e; ++b)&#123;&#125;// orint *e=end(arr); //#include &lt;iterator&gt;int *b=begin(arr); //This is better 二维数组初始化 1234567int a[3][4]=&#123; &#123;0,1,2,3&#125;, &#123;4,5,6,7&#125;, &#123;8,9,0,1&#125;&#125;;int a[3][4]=&#123;0,1,2,3,4,5,6,7,8,9,0,1&#125;; //same]]></content>
+    <content type="text"><![CDATA[数组的声明，指针，二维数组 复杂的数组声明12345int *ptrs[10]; //ptrs 是一个含有10个 整型指针 的数组int &amp;refs[10]= arr; // Wrong，不存在引用的数组int (*P)[10]=&amp;arr; // P是一个指针，指向一个含有10个整数的数组int (&amp;arrRef)[10]=arr; //arrRef 引用一个含有10个整数的数组int * (&amp;arr)[10]=ptrs; //arr 是数组的引用，该数组含有10个指针 指针与数组123456string nums[]=&#123;"onr", "two", "three"&#125;;string *p=nums; // string *p=&amp;nums[0];auto p2(nums); //p2为指向字符串的指针，指向 nums 的第一个元素auto p2(&amp;nums[0]);*p2="sfa"; 当用decltype时，跟上面又不一样了，不再返回指针，而是返回数组 123int ia[]=&#123;1,2,3,4,5,6,7,8,9,0&#125;;decltype(ia) ia2=&#123;0,1,2,3,4,5,6,7,8,9&#125;; //decltype 返回的类型是由10个整数构成的数组 把指针当迭代器重点在于找到终止点。 12345int *e=&amp;arr[10]; //指向 arr 最后一个元素的下一个位置。for(int *b=arr; b!=e; ++b)&#123;&#125;// orint *e=end(arr); //#include &lt;iterator&gt;int *b=begin(arr); //This is better 二维数组初始化 1234567int a[3][4]=&#123; &#123;0,1,2,3&#125;, &#123;4,5,6,7&#125;, &#123;8,9,0,1&#125;&#125;;int a[3][4]=&#123;0,1,2,3,4,5,6,7,8,9,0,1&#125;; //same]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
