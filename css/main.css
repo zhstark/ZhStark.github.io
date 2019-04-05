@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e8bdff;
+  background: #fffc41;
 }
 .feed-link,
 .chat {
@@ -2862,5 +2862,5 @@ h5 {
   display: none;
 }
 #menu {
-  text-align: right;
+  text-align: right !important;
 }
