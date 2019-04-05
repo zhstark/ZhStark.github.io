@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6ed557;
+  background: #e8bdff;
 }
 .feed-link,
 .chat {
@@ -2860,4 +2860,7 @@ h5 {
 }
 .post-toc .nav .nav-level-1>.nav-child {
   display: none;
+}
+#menu {
+  text-align: right;
 }
