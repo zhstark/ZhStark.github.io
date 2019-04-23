@@ -2603,7 +2603,7 @@ hr {
 }
 .posts-expand .post-title,
 .posts-expand .post-meta {
-  text-align: center;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .posts-expand .post-title,
