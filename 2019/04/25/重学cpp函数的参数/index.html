@@ -97,16 +97,16 @@
 
 
 
-  <meta name="description" content="形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数">
+  <meta name="description" content="关于：形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重学c++5 函数的参数">
 <meta property="og:url" content="http://zhstark.com/2019/04/25/重学cpp函数的参数/index.html">
 <meta property="og:site_name" content="小豪's blog">
-<meta property="og:description" content="形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数">
-<meta property="og:updated_time" content="2019-04-26T03:38:02.114Z">
+<meta property="og:description" content="关于：形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数">
+<meta property="og:updated_time" content="2019-04-26T04:26:50.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学c++5 函数的参数">
-<meta name="twitter:description" content="形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数">
+<meta name="twitter:description" content="关于：形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数">
 
 
 
@@ -486,7 +486,7 @@
       
 
       
-        <p>形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数</p>
+        <p>关于：形参于实参, 声明, 分离式编译, 数组参数, main 函数参数, 可变参数</p>
 <a id="more"></a>
 <h3 id="形参与实参"><a href="#形参与实参" class="headerlink" title="形参与实参"></a>形参与实参</h3><p>函数定义时参数列表里的是形参（parameter），使用函数时，放进圆括号里的是实参（argument）。实参是形参的初始值。</p>
 <h3 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h3><p>因为函数的声明不包含函数体，所以也就无须形参的名字。所以在函数的生命中经常省略形参的名字。</p>
@@ -1019,9 +1019,14 @@
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })

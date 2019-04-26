@@ -97,16 +97,16 @@
 
 
 
-  <meta name="description" content="decltype 返回方程的返回类型">
+  <meta name="description" content="关于decltype 和 string 的一些东西。 decltype返回方程的返回类型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重学c++3 decltype & string">
 <meta property="og:url" content="http://zhstark.com/2019/03/24/重学cpp-decltype-and-string/index.html">
 <meta property="og:site_name" content="小豪's blog">
-<meta property="og:description" content="decltype 返回方程的返回类型">
-<meta property="og:updated_time" content="2019-03-25T00:43:02.339Z">
+<meta property="og:description" content="关于decltype 和 string 的一些东西。 decltype返回方程的返回类型。">
+<meta property="og:updated_time" content="2019-04-26T04:30:37.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学c++3 decltype & string">
-<meta name="twitter:description" content="decltype 返回方程的返回类型">
+<meta name="twitter:description" content="关于decltype 和 string 的一些东西。 decltype返回方程的返回类型。">
 
 
 
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1k</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -486,9 +486,10 @@
       
 
       
-        <p>decltype 返回方程的返回类型</p>
+        <p>关于<code>decltype</code> 和 string 的一些东西。 decltype返回方程的返回类型。</p>
 <a id="more"></a>
-<h2 id="三-decltype"><a href="#三-decltype" class="headerlink" title="三 decltype"></a>三 decltype</h2><p>decltype的作用是选择并返回操作数的数据类型<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">decltype</span>(f()) s=x;	<span class="comment">//s 的类型为函数 f 的返回值类型</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> c1=<span class="number">0</span>, &amp;c2=c1;</div><div class="line"><span class="keyword">decltype</span>(c1) x=<span class="number">0</span>;	<span class="comment">//const int x</span></div><div class="line"><span class="keyword">decltype</span>(c2) y=x;	<span class="comment">//const int &amp;y=x;</span></div></pre></td></tr></table></figure></p>
+<h2 id="三-decltype"><a href="#三-decltype" class="headerlink" title="三 decltype"></a>三 decltype</h2><p>decltype的作用是选择并返回操作数的数据类型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">decltype</span>(f()) s=x;	<span class="comment">//s 的类型为函数 f 的返回值类型</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> c1=<span class="number">0</span>, &amp;c2=c1;</div><div class="line"><span class="keyword">decltype</span>(c1) x=<span class="number">0</span>;	<span class="comment">//const int x</span></div><div class="line"><span class="keyword">decltype</span>(c2) y=x;	<span class="comment">//const int &amp;y=x;</span></div></pre></td></tr></table></figure>
 <p>如果 decltype 的表达式加上了一对括号，这样的 decltype 会得到一个引用类型</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line"><span class="keyword">decltype</span>((i)) d=i;	<span class="comment">//	d是一个 int&amp; 引用变量</span></div></pre></td></tr></table></figure>
 <h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><h3 id="using-声明"><a href="#using-声明" class="headerlink" title="using 声明"></a>using 声明</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>::name;</div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</div></pre></td></tr></table></figure>
@@ -1015,9 +1016,14 @@
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })

@@ -1219,8 +1219,8 @@ pre .javascript .function {
 .post-body {
   overflow-wrap: break-word;
   word-wrap: break-word;
+  margin: 40px;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  text-align: center !important;
 }
 .post-body span.exturl .fa {
   font-size: 14px;
@@ -1532,7 +1532,7 @@ pre .javascript .function {
   }
 }
 .post-button {
-  margin-top: 40px;
+  margin-top: 40px !important;
   text-align: center !important;
 }
 .posts-expand .post-tags {
@@ -1810,7 +1810,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #888fc6;
+  background: #55ffc9;
 }
 .feed-link,
 .chat {

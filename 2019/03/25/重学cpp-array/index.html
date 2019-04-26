@@ -97,16 +97,16 @@
 
 
 
-  <meta name="description" content="数组的声明，指针，二维数组">
+  <meta name="description" content="关于数组的声明，指针与二维数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重学cpp4 数组">
 <meta property="og:url" content="http://zhstark.com/2019/03/25/重学cpp-array/index.html">
 <meta property="og:site_name" content="小豪's blog">
-<meta property="og:description" content="数组的声明，指针，二维数组">
-<meta property="og:updated_time" content="2019-03-27T14:54:25.804Z">
+<meta property="og:description" content="关于数组的声明，指针与二维数组">
+<meta property="og:updated_time" content="2019-04-26T04:30:57.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学cpp4 数组">
-<meta name="twitter:description" content="数组的声明，指针，二维数组">
+<meta name="twitter:description" content="关于数组的声明，指针与二维数组">
 
 
 
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">937</span>
+                <span title="本文字数">949</span>
               
 
               
@@ -486,7 +486,7 @@
       
 
       
-        <p>数组的声明，指针，二维数组</p>
+        <p>关于数组的声明，指针与二维数组</p>
 <a id="more"></a>
 <h3 id="复杂的数组声明"><a href="#复杂的数组声明" class="headerlink" title="复杂的数组声明"></a>复杂的数组声明</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *ptrs[<span class="number">10</span>];	<span class="comment">//ptrs 是一个含有10个 整型指针 的数组</span></div><div class="line"><span class="keyword">int</span> &amp;refs[<span class="number">10</span>]= arr;	<span class="comment">// Wrong，不存在引用的数组</span></div><div class="line"><span class="keyword">int</span> (*P)[<span class="number">10</span>]=&amp;arr;	<span class="comment">//	P是一个指针，指向一个含有10个整数的数组</span></div><div class="line"><span class="keyword">int</span> (&amp;arrRef)[<span class="number">10</span>]=arr;	<span class="comment">//arrRef 引用一个含有10个整数的数组</span></div><div class="line"><span class="keyword">int</span> * (&amp;arr)[<span class="number">10</span>]=ptrs;	<span class="comment">//arr 是数组的引用，该数组含有10个指针</span></div></pre></td></tr></table></figure>
 <h3 id="指针与数组"><a href="#指针与数组" class="headerlink" title="指针与数组"></a>指针与数组</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> nums[]=&#123;<span class="string">"onr"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>&#125;;</div><div class="line"><span class="built_in">string</span> *p=nums;	<span class="comment">// string *p=&amp;nums[0];</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">auto</span> <span class="title">p2</span><span class="params">(nums)</span></span>;	<span class="comment">//p2为指向字符串的指针，指向 nums 的第一个元素</span></div><div class="line"><span class="function"><span class="keyword">auto</span> <span class="title">p2</span><span class="params">(&amp;nums[<span class="number">0</span>])</span></span>;</div><div class="line">*p2=<span class="string">"sfa"</span>;</div></pre></td></tr></table></figure>
@@ -496,6 +496,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *e=&amp;arr[<span class="number">10</span>];	<span class="comment">//指向 arr 最后一个元素的下一个位置。</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> *b=arr; b!=e; ++b)&#123;&#125;</div><div class="line"><span class="comment">// or</span></div><div class="line"><span class="keyword">int</span> *e=end(arr);	<span class="comment">//#include &lt;iterator&gt;</span></div><div class="line"><span class="keyword">int</span> *b=begin(arr);	<span class="comment">//This is better</span></div></pre></td></tr></table></figure>
 <h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>初始化</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>]=&#123;</div><div class="line">	&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</div><div class="line">	&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;,</div><div class="line">	&#123;<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="number">1</span>&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;	<span class="comment">//same</span></div></pre></td></tr></table></figure>
+<h3 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h3><p><strong>数组不能被拷贝</strong></p>
 
       
     </div>
@@ -784,7 +785,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂的数组声明"><span class="nav-number">1.</span> <span class="nav-text">复杂的数组声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针与数组"><span class="nav-number">2.</span> <span class="nav-text">指针与数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把指针当迭代器"><span class="nav-number">3.</span> <span class="nav-text">把指针当迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组"><span class="nav-number">4.</span> <span class="nav-text">二维数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂的数组声明"><span class="nav-number">1.</span> <span class="nav-text">复杂的数组声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针与数组"><span class="nav-number">2.</span> <span class="nav-text">指针与数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把指针当迭代器"><span class="nav-number">3.</span> <span class="nav-text">把指针当迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维数组"><span class="nav-number">4.</span> <span class="nav-text">二维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PS"><span class="nav-number">5.</span> <span class="nav-text">PS</span></a></li></ol></div>
             
 
           </div>
@@ -1013,9 +1014,14 @@
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })

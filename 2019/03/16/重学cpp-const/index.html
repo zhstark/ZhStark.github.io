@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://zhstark.com/2019/03/16/重学cpp-const/index.html">
 <meta property="og:site_name" content="小豪's blog">
 <meta property="og:description" content="指向常量的指针，常量指针，指向常量的常量指针 = =！">
-<meta property="og:updated_time" content="2019-04-26T03:15:58.508Z">
+<meta property="og:updated_time" content="2019-04-26T04:27:00.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重学C++2  const">
 <meta name="twitter:description" content="指向常量的指针，常量指针，指向常量的常量指针 = =！">
@@ -1023,9 +1023,14 @@
               })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! More info at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
             
           }
         })
