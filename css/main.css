@@ -1486,7 +1486,7 @@ pre .javascript .function {
   color: #999;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 12px;
-  text-align: center;
+  text-align: center !important;
 }
 .posts-expand .post-meta .post-category-list {
   display: inline-block;
@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8cd5e9;
+  background: #22ff28;
 }
 .feed-link,
 .chat {
