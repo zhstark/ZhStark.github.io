@@ -1809,7 +1809,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #01ffff;
+  background: #ff13fb;
 }
 .feed-link,
 .chat {
@@ -2835,7 +2835,7 @@ h6 {
   padding: 10px;
   font-style: bold !important;
 /*color: #009688 !important;*/
-  text-align: center !important;
+/* text-align: center !important;*/
 }
 h1 {
   font-size: 26px !important;
@@ -2845,6 +2845,7 @@ h2 {
   font-size: 24px !important;
   border-bottom: 3px solid #eee !important;
   color: #425352;
+  text-align: center;
 }
 h3 {
   font-size: 20px;
