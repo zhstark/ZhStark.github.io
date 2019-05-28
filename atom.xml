@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhstark.com/"/>
-  <updated>2019-05-28T08:51:53.468Z</updated>
+  <updated>2019-05-28T08:59:13.234Z</updated>
   <id>http://zhstark.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线程间通信</title>
+    <link href="http://zhstark.com/2019/05/28/%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
+    <id>http://zhstark.com/2019/05/28/线程间通信/</id>
+    <published>2019-05-28T08:58:37.000Z</published>
+    <updated>2019-05-28T08:59:13.234Z</updated>
+    
+    <content type="html"><![CDATA[<p>锁机制：包括互斥锁、条件变量、读写锁</p><ul><li>互斥锁提供了以排他方式防止数据结构被并发修改的方法。</li><li>读写锁允许多个线程同时读共享数据，而对写操作是互斥的。</li><li>条件变量可以以原子的方式阻塞进程，直到某个特定条件为真为止。对条件的测试是在互斥锁的保护下进行的。条件变量始终与互斥锁一起使用。</li></ul><p>信号量机制(Semaphore)：包括无名线程信号量和命名线程信号量<br>信号机制(Signal)：类似进程间的信号处理<br>线程间的通信目的主要是用于线程同步，所以线程没有像进程通信中的用于数据交换的通信机制。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;锁机制：包括互斥锁、条件变量、读写锁&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;互斥锁提供了以排他方式防止数据结构被并发修改的方法。&lt;/li&gt;
+&lt;li&gt;读写锁允许多个线程同时读共享数据，而对写操作是互斥的。&lt;/li&gt;
+&lt;li&gt;条件变量可以以原子的方式阻塞进程，直到某个特定条件为真为止。对条
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://zhstark.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="操作系统" scheme="http://zhstark.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>进程间的通信</title>
@@ -429,28 +458,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot;一&quot;&gt;&lt;/a&gt;一&lt;/h2&gt;&lt;p&gt;今天晚上终于找到一家合适的咖啡店上自习，有网，安静。中科院不提供自习处，十一假期好多店又关门，每天晚上我们都是无家可归的状态，到处找地方蹭网做作业。而且，这家店老板的闺女挺漂亮哒，态度好，声音也好听，嘤嘤嘤。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Proactive" scheme="http://zhstark.com/categories/Proactive/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>中科院科研项目第二天</title>
-    <link href="http://zhstark.com/2016/10/02/%E4%B8%AD%E7%A7%91%E9%99%A2%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%BA%8C%E5%A4%A9/"/>
-    <id>http://zhstark.com/2016/10/02/中科院科研项目第二天/</id>
-    <published>2016-10-02T14:39:06.000Z</published>
-    <updated>2018-12-17T04:52:46.788Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>学习乃万恶之首<br>其实我也想度假</p></blockquote><a id="more"></a><h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>昨天做作业搞到凌晨一点半，所以没有及时发文。</p><p>今天作业量小些，先补写一下~</p><p>在计算所上课到下午四点半，下课就不让待着了，待着那里也没wifi。堂堂计算所 竟然不提供全楼 wifi 覆盖，真是说不过去，太掉价了。</p><p>而中科院周围跟空城似的，假期真是积极响应党和国家的号召，认认真真休假，找了两家咖啡馆都关门，现在我们下课后的情况就是到处找地方自习蹭 WiFi。</p><p>先放一下计算所的照片吧，</p><p><img src="http://obt165s4s.bkt.clouddn.com/IMG_0125.jpg" alt="IMG_0125"></p><p><img src="http://obt165s4s.bkt.clouddn.com/IMG_0126.jpg" alt="IMG_0126"></p><p><img src="http://obt165s4s.bkt.clouddn.com/IMG_0127.jpg" alt="IMG_0127"></p><p>内部布局看起来挺大气的，那些座椅在一楼大厅的一侧，在这喝杯咖啡聊聊天还是蛮有韵味的。大门有门禁，负责门禁的是个很帅气的小哥，恩，真挺帅气的。地下一层就乒乓球场地，球台挺好的，空间也够大，本来冲着这点就考虑以后到这找工作了，但是看了他的 wifi 情况还是算了。</p><h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>昨天作业算是真正开始接触机器学习了。之前都是使用 MATLAB 对图像进行处理（在此不得不感叹 MATLAB 之强大），但是处理后并不能完全把车牌区域提取出来，经过这种程度地处理电脑还很容易把非车牌区域认为车牌区域，毕竟它也不知道那到底是啥区域，只是判断其颜色，大小，就提取出来了。</p><p><img src="http://obt165s4s.bkt.clouddn.com/proposal.png" alt="proposa"></p><p>要想变得厉害还是得学习！</p><blockquote><p>机器学习是怎么来的呢？有一群心理变态的人在一起读书学习的时候看着电脑在那无聊的待着，就想：「这电脑怎么能这样呢？要么玩游戏，要么就放点 dirty movie，毒害人类！要么就在那闲着，浪费生命！这可不行，你得学习，不学习不成机器。」于是他们就发明了机器学习，这样电脑也能快乐的陪他们一起学习了。</p></blockquote><p>以上纯属扯淡</p><p>用 MATLAB 提取出几块可能是车牌的区域还是不行啊，得让电脑知道哪块才是真正的车牌区域才行。但是人们又懒得一点点教电脑怎么识别哪块才是车牌区域，所以，让电脑自己学去吧！老子才不管你，学不好就摔你！</p><p>学习得有方法，于是那些大（bian）神（tai）善性大发，打算教给电脑一些学习方法，其中一种叫 「SVM（Support Vector Machine）分类器」。</p><p>SVM 翻译过来叫支持向量机，他叫“机”，但他不是机器，它属于机器学习中的有监督学习模型。（电脑学个习还得被监督呢？谁监督你啊呸）刚来第二天就要接触高大上的机器学习模型，还得做 ppt 展示？我的表情是这样的</p><p><img src="http://obt165s4s.bkt.clouddn.com/WechatIMG2.jpeg" alt="WechatIMG2"></p><p>但该学还得学啊，电脑都要学习了，咱不能比不过电脑啊。昨天看资料到12点多，终于感觉理解的差不多了，于是简单做了个 keynote，麻溜睡觉。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;学习乃万恶之首&lt;br&gt;其实我也想度假&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     
