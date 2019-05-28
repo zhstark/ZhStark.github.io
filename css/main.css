@@ -1809,7 +1809,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5b9ce3;
+  background: #e4006f;
 }
 .feed-link,
 .chat {
@@ -2840,6 +2840,7 @@ h6 {
 h1 {
   font-size: 26px !important;
   color: #425352;
+  text-align: center !important;
 }
 h2 {
   font-size: 24px !important;
