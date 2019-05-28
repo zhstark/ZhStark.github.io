@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhstark.com/"/>
-  <updated>2019-05-28T12:55:36.785Z</updated>
+  <updated>2019-05-28T15:12:16.486Z</updated>
   <id>http://zhstark.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CAP定理</title>
+    <link href="http://zhstark.com/2019/05/28/CAP%E5%AE%9A%E7%90%86/"/>
+    <id>http://zhstark.com/2019/05/28/CAP定理/</id>
+    <published>2019-05-28T15:11:43.000Z</published>
+    <updated>2019-05-28T15:12:16.486Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接看<a href="http://www.ruanyifeng.com/blog/2018/07/cap.html" target="_blank" rel="external">大佬的博客</a>吧。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;直接看&lt;a href=&quot;http://www.ruanyifeng.com/blog/2018/07/cap.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;大佬的博客&lt;/a&gt;吧。。。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://zhstark.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据库" scheme="http://zhstark.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>线程间通信</title>
@@ -438,26 +464,6 @@
     
       &lt;p&gt;&lt;em&gt;前三部分为扯淡，第四部分描述了这个课题的过程步骤，第五部分为一些小感悟，第六部分是小福利。&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
-    
-    </summary>
-    
-      <category term="Proactive" scheme="http://zhstark.com/categories/Proactive/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>中科院科研项目第三天</title>
-    <link href="http://zhstark.com/2016/10/03/%E4%B8%AD%E7%A7%91%E9%99%A2%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE%E7%AC%AC%E4%B8%89%E5%A4%A9/"/>
-    <id>http://zhstark.com/2016/10/03/中科院科研项目第三天/</id>
-    <published>2016-10-03T05:53:21.000Z</published>
-    <updated>2016-10-21T12:29:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>今天晚上终于找到一家合适的咖啡店上自习，有网，安静。中科院不提供自习处，十一假期好多店又关门，每天晚上我们都是无家可归的状态，到处找地方蹭网做作业。而且，这家店老板的闺女挺漂亮哒，态度好，声音也好听，嘤嘤嘤。</p><a id="more"></a><p>项目一共五天，今天已经是第三天了，还有两天结束，周围开门的饭店已经被我吃遍了。。。。感觉每逢短期假期就是我遭罪的时候，不回家，然而在外面各个服务业又停业，没地方吃，没地方去，只有床才是最温暖的陪伴。</p><h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p>今天的作业是利用 HOG 提取体特征，将训练集送入 SVM 分类器让其学习，产生一个模型，再利用学习后的模型对我们需要分类的样本进行分类。</p><p>HOG 我还没太仔细看，解释不清楚，至于 SVM，可以看我上一篇文章最后的 gif 录屏，不要嫌那个动的太快，腾讯只让发2M 以下的 gif，我也没办法。其实只要我们上下摆头的速率和那张动图变化的速率一样，就能看清了。不难，我试了7次就合上拍了，还挺清晰的。</p><p>就我们目前做的课题来说，就是送一堆车牌的图片给电脑，并告诉他「看清楚了，这是车牌！」再送给他一坨不是车牌，但他可能以为是车牌的图片，告诉他「长点即兴，要是认错了发你跪键盘！」然后电脑就赶紧认认真真地去学习车牌长什么样子，不长什么样子。</p><p>等他学会后，吸收，消化，排泄，拉出一个模型便便💩，不屑地告诉我「我这便便能认识车牌了，你把这便便扣在有车牌的图片上，它把车牌给你熏下来。」</p><p>我如珍似宝地双手托着这宝贵的便便，使劲扣在一张图片上，它还真把车牌给熏下来了。我熏了一张又一张，发现，这便便味道不够足嘛，有的车牌还是熏不下来，唉。回去罚他跪键盘，但是发现作为一个穷逼，我并没有键盘让他跪。所以特此征好心人送我一个 cherry 键盘来让电脑跪，感激不尽。</p><h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>其实让电脑学习还不是简单的给他资料他就能学。电脑，这个高贵的东西，肯定有点小脾气不是，所以你得对他性子才行，他喜欢吃苹果，你非得喂他吃榴莲，他肯定轻则罢学重则 down机啊，榴莲再贵也不行，不对电脑口味。</p><p>所以能，咱得找到电脑喜欢啥，给他点啥他才能更好的学习。电脑没长牙，那我就送他两个参数意思意思呗，他不告诉我他喜欢吃啥很是讨厌，我得一个个试，这电脑配置低，性格墨迹，试一次要好长时间，TMD，老子有钱了买个最高配，拿一筐苹果塞他嘴里，让他使劲吃，吃完使劲学。苹果不管用就塞梨，梨再不管用，那我只能破费请他吃个海底捞了。</p><p>目前我还没兴致找他口味，所以他现在拉出的便便质量也就那样吧，还凑活能用。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot;一&quot;&gt;&lt;/a&gt;一&lt;/h2&gt;&lt;p&gt;今天晚上终于找到一家合适的咖啡店上自习，有网，安静。中科院不提供自习处，十一假期好多店又关门，每天晚上我们都是无家可归的状态，到处找地方蹭网做作业。而且，这家店老板的闺女挺漂亮哒，态度好，声音也好听，嘤嘤嘤。&lt;/p&gt;
     
     </summary>
     
