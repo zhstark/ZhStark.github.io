@@ -105,9 +105,9 @@
 <meta property="og:description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
 <meta property="og:image" content="http://zhstark.com/images/网络.png">
 <meta property="og:image" content="http://zhstark.com/images/DraggedImage.jpg">
-<meta property="og:image" content="http://zhstark.com/DraggedImage.eff5d057f282408e8046d1cfc197adde.png">
-<meta property="og:image" content="https://www.notion.so/TCP-and-UDP-38934706401b4f529aca333714176351#4d565770dbbd4045bf4fa008a20aaab5">
-<meta property="og:updated_time" content="2019-05-28T03:47:03.192Z">
+<meta property="og:image" content="http://zhstark.com/images/DraggedImage.eff5d057f282408e8046d1cfc197adde.png">
+<meta property="og:image" content="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg">
+<meta property="og:updated_time" content="2019-05-28T03:50:11.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于网络的一些基础知识">
 <meta name="twitter:description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
@@ -507,8 +507,8 @@
 <li>确保最后一个确认报文段能够到达。如果 B 没有收到 A 发来的确认报文段，那么久会重新发送连接释放请求报文段，A 等待一段时间就是为了处理这种情况的发生。</li>
 <li>可能存在“已失效的连接请求报文段”，为了防止这种报文段出现在本次链接之外，需要等待一段时间，防止串话。</li>
 </ol>
-<p><img src="DraggedImage.eff5d057f282408e8046d1cfc197adde.png" alt=""></p>
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p><img src="https://www.notion.so/TCP-and-UDP-38934706401b4f529aca333714176351#4d565770dbbd4045bf4fa008a20aaab5" alt=""></p>
+<p><img src="/images/DraggedImage.eff5d057f282408e8046d1cfc197adde.png" alt=""></p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p><img src="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg" alt=""></p>
 <p>一开始，客户端和服务端都处于 close 状态，先是服务端主动监听某个端口，处于 <em>Listen</em> 状态，然后客户端主动发起建立<em>SYN</em>，处于<em>SYN-SEND 状态</em>，服务端收到发起的连接，返回<em>SYN</em>，并且 ACK 客户端的 SYN，处于<em>SYN-RCVD</em>状态，客户端收到服务端的 SYN 和 ACK之后，发送 ACK 的 ACK，然后处于<em>ESTABLISHED</em>状态。服务端收到 ACK 的 ACK 之后，处于<em>ESTABLISHED</em>状态。</p>
 <h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>为了保障顺序性，每一个包都有一个 ID。为了保证不丢包，对于发送的包都要进行应答。但是这个应答也不是一个一个来的，而是会应答某个之前的 ID，表示都收到了，这样的模式称为<strong>累计确认</strong>或者<strong>累计应答</strong>（cumulative acknowledgment）。</p>
 <p>TCP 将所有的包按照 ID 的排列划分：</p>
