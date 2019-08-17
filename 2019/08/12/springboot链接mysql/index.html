@@ -100,14 +100,14 @@
   <meta name="description" content="实习过程中需要自己起一个 Springboot 项目并要与 MySQL 交互，第二次更新项目内容时所作记录以防遗忘。
 基本的 SpringBoot 知识与 MySQL 都不会介绍。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="springboot链接mysql">
+<meta property="og:title" content="springboot连接操作mysql">
 <meta property="og:url" content="http://zhstark.com/2019/08/12/springboot链接mysql/index.html">
 <meta property="og:site_name" content="小豪's blog">
 <meta property="og:description" content="实习过程中需要自己起一个 Springboot 项目并要与 MySQL 交互，第二次更新项目内容时所作记录以防遗忘。
 基本的 SpringBoot 知识与 MySQL 都不会介绍。">
-<meta property="og:updated_time" content="2019-08-14T09:59:51.980Z">
+<meta property="og:updated_time" content="2019-08-15T08:14:33.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="springboot链接mysql">
+<meta name="twitter:title" content="springboot连接操作mysql">
 <meta name="twitter:description" content="实习过程中需要自己起一个 Springboot 项目并要与 MySQL 交互，第二次更新项目内容时所作记录以防遗忘。
 基本的 SpringBoot 知识与 MySQL 都不会介绍。">
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>springboot链接mysql | 小豪's blog</title>
+  <title>springboot连接操作mysql | 小豪's blog</title>
   
 
 
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">springboot链接mysql
+          <h1 class="post-title" itemprop="name headline">springboot连接操作mysql
 
               
             
@@ -440,7 +440,7 @@
 
           
           
-            <span id="/2019/08/12/springboot链接mysql/" class="leancloud_visitors" data-flag-title="springboot链接mysql">
+            <span id="/2019/08/12/springboot链接mysql/" class="leancloud_visitors" data-flag-title="springboot连接操作mysql">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.2k</span>
+                <span title="本文字数">6.3k</span>
               
 
               
@@ -508,7 +508,7 @@
 <h2 id="创建-Entity"><a href="#创建-Entity" class="headerlink" title="创建 Entity"></a>创建 Entity</h2><p>创建一个类，设置好各属性，及其 setter</p>
 <p>如果需要通过哪项进行查找，如要执行等同 <code>select * where name=xxx</code> 的操作，则要设置该属性的 getter 方法。</p>
 <p>例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> hello;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.persistence.Entity;</div><div class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</div><div class="line"><span class="keyword">import</span> javax.persistence.GenerationType;</div><div class="line"><span class="keyword">import</span> javax.persistence.Id;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span> <span class="comment">// This tells Hibernate to make a table out of this class</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy=GenerationType.AUTO)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String email;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.id = id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> email;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> hello;</div><div class="line"></div><div class="line"><span class="keyword">import</span> javax.persistence.Entity;</div><div class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</div><div class="line"><span class="keyword">import</span> javax.persistence.GenerationType;</div><div class="line"><span class="keyword">import</span> javax.persistence.Id;</div><div class="line"></div><div class="line"><span class="meta">@Entity</span> <span class="comment">// This tells Hibernate to make a table out of this class</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</div><div class="line">    <span class="meta">@Id</span></div><div class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.AUTO, generator = <span class="string">"native"</span>)</div><div class="line">    <span class="meta">@GenericGenerator</span>(name = <span class="string">"native"</span>, strategy = <span class="string">"native"</span>)</div><div class="line">    <span class="meta">@Column</span>(name = <span class="string">"id"</span>, updatable = <span class="keyword">false</span>, nullable = <span class="keyword">false</span>)</div><div class="line">    <span class="keyword">private</span> Integer id;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String email;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.id = id;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> email;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.email = email;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这种 entity 会被 Hibernate 自动转换进 table</p>
 <h2 id="创建-repository"><a href="#创建-repository" class="headerlink" title="创建 repository"></a>创建 repository</h2><p>创建一个 repository 接口用于之后操作</p>
 <p>其默认的方法有限，如果我们希望通过其他属性查找，如通过 <code>name</code>，需要加一个 <code>findByName(String name)</code>方法声明。如果通过两个属性一起查找，则添加 <code>findByNameAndEmail(String name, String email)</code> 在 Entity 中要有气 getter 方法。</p>
@@ -591,8 +591,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/30/double类型比较/" rel="next" title="double类型比较.md">
-                <i class="fa fa-chevron-left"></i> double类型比较.md
+              <a href="/2019/07/30/double类型比较/" rel="next" title="double类型比较">
+                <i class="fa fa-chevron-left"></i> double类型比较
               </a>
             
           </div>
@@ -600,6 +600,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/17/Java中的length-length-和size/" rel="prev" title="Java中的length,length()和size()">
+                Java中的length,length()和size() <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -676,7 +680,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
