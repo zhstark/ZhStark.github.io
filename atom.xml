@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>小豪&#39;s blog</title>
   
-  <subtitle>痛无止境 学无止境</subtitle>
+  <subtitle>逢山开道，遇水搭桥</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhstark.com/"/>
-  <updated>2019-08-17T07:56:42.139Z</updated>
+  <updated>2019-08-17T12:27:35.961Z</updated>
   <id>http://zhstark.com/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Java中的length,length()和size()</title>
     <link href="http://zhstark.com/2019/08/17/Java%E4%B8%AD%E7%9A%84length-length-%E5%92%8Csize/"/>
     <id>http://zhstark.com/2019/08/17/Java中的length-length-和size/</id>
-    <published>2019-08-17T07:55:01.000Z</published>
-    <updated>2019-08-17T07:56:42.139Z</updated>
+    <published>2019-08-17T19:55:01.000Z</published>
+    <updated>2019-08-17T12:27:35.961Z</updated>
     
     <content type="html"><![CDATA[<p>Java 中判断一个元素的长度一会 size()，一会 length，一会 length()，简直有毒。如何判断用哪个呢？选择这些方法时有什么规律吗？</p><a id="more"></a><p>1 java中的length属性是针对数组说的,比如说你声明了一个数组,想知道这个数组的长度则用到了length这个属性.</p><p>2 java中的length()方法是针对字符串String说的,如果想看这个字符串的长度则用到length()这个方法.</p><p>3.java中的size()方法是针对泛型集合说的,如果想看这个泛型有多少个元素,就调用此方法来查看!</p>]]></content>
     
@@ -31,6 +31,10 @@
     
     </summary>
     
+      <category term="学习笔记" scheme="http://zhstark.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Java" scheme="http://zhstark.com/tags/Java/"/>
     
   </entry>
   
@@ -209,8 +213,8 @@
   
   <entry>
     <title>进程与线程的简单解释</title>
-    <link href="http://zhstark.com/2019/05/28/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%A7%A3%E9%87%8A/"/>
-    <id>http://zhstark.com/2019/05/28/进程与线程的简单解释/</id>
+    <link href="http://zhstark.com/2019/05/27/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%A7%A3%E9%87%8A/"/>
+    <id>http://zhstark.com/2019/05/27/进程与线程的简单解释/</id>
     <published>2019-05-28T03:06:50.000Z</published>
     <updated>2019-05-28T03:16:38.274Z</updated>
     
@@ -231,8 +235,8 @@
   
   <entry>
     <title>关于网络的一些基础知识</title>
-    <link href="http://zhstark.com/2019/05/28/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://zhstark.com/2019/05/28/关于网络的一些基础知识/</id>
+    <link href="http://zhstark.com/2019/05/27/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://zhstark.com/2019/05/27/关于网络的一些基础知识/</id>
     <published>2019-05-28T02:48:20.000Z</published>
     <updated>2019-05-28T03:50:11.875Z</updated>
     

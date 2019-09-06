@@ -97,21 +97,28 @@
 
 
 
-  <meta name="description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
+  <meta name="description" content="转载自阮一峰的网络日志">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于网络的一些基础知识">
-<meta property="og:url" content="http://zhstark.com/2019/05/28/关于网络的一些基础知识/index.html">
+<meta property="og:title" content="进程与线程的简单解释">
+<meta property="og:url" content="http://zhstark.com/2019/05/27/进程与线程的简单解释/index.html">
 <meta property="og:site_name" content="小豪's blog">
-<meta property="og:description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
-<meta property="og:image" content="http://zhstark.com/images/网络.png">
-<meta property="og:image" content="http://zhstark.com/images/DraggedImage.jpg">
-<meta property="og:image" content="http://zhstark.com/images/DraggedImage.eff5d057f282408e8046d1cfc197adde.png">
-<meta property="og:image" content="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg">
-<meta property="og:updated_time" content="2019-05-28T03:50:11.875Z">
+<meta property="og:description" content="转载自阮一峰的网络日志">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042401.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042402.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042403.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042404.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042405.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042406.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042407.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042408.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042409.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042410.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042411.png">
+<meta property="og:updated_time" content="2019-05-28T03:16:38.274Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于网络的一些基础知识">
-<meta name="twitter:description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
-<meta name="twitter:image" content="http://zhstark.com/images/网络.png">
+<meta name="twitter:title" content="进程与线程的简单解释">
+<meta name="twitter:description" content="转载自阮一峰的网络日志">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042401.jpg">
 
 
 
@@ -121,7 +128,7 @@
 
   
   
-  <link rel="canonical" href="http://zhstark.com/2019/05/28/关于网络的一些基础知识/"/>
+  <link rel="canonical" href="http://zhstark.com/2019/05/27/进程与线程的简单解释/"/>
 
 
 
@@ -131,7 +138,7 @@
   };
 </script>
 
-  <title>关于网络的一些基础知识 | 小豪's blog</title>
+  <title>进程与线程的简单解释 | 小豪's blog</title>
   
 
 
@@ -198,7 +205,7 @@
     </div>
     
       
-        <p class="site-subtitle">痛无止境 学无止境</p>
+        <p class="site-subtitle">逢山开道，遇水搭桥</p>
       
     
     
@@ -353,11 +360,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhstark.com/2019/05/28/关于网络的一些基础知识/"/>
+    <link itemprop="mainEntityOfPage" href="http://zhstark.com/2019/05/27/进程与线程的简单解释/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hao Zhao"/>
-      <meta itemprop="description" content="菜狗一条"/>
+      <meta itemprop="description" content="Mens et manus"/>
       <meta itemprop="image" content="/images/IMG_3004.JPG"/>
     </span>
 
@@ -370,7 +377,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于网络的一些基础知识
+          <h1 class="post-title" itemprop="name headline">进程与线程的简单解释
 
               
             
@@ -396,7 +403,7 @@
                 
               
 
-              <time title="创建时间：2019-05-28 10:48:20" itemprop="dateCreated datePublished" datetime="2019-05-28T10:48:20+08:00">2019-05-28</time>
+              <time title="创建时间：2019-05-27 23:06:50" itemprop="dateCreated datePublished" datetime="2019-05-27T23:06:50-04:00">2019-05-27</time>
             
 
             
@@ -433,8 +440,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/28/关于网络的一些基础知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/28/关于网络的一些基础知识/" itemprop="commentCount"></span>
+                <a href="/2019/05/27/进程与线程的简单解释/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/27/进程与线程的简单解释/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -442,7 +449,7 @@
 
           
           
-            <span id="/2019/05/28/关于网络的一些基础知识/" class="leancloud_visitors" data-flag-title="关于网络的一些基础知识">
+            <span id="/2019/05/27/进程与线程的简单解释/" class="leancloud_visitors" data-flag-title="进程与线程的简单解释">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -467,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.6k</span>
+                <span title="本文字数">1k</span>
               
 
               
@@ -491,63 +498,47 @@
       
 
       
-        <p>包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。</p>
+        <p>转载自<em><a href="http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html" target="_blank" rel="external">阮一峰的网络日志</a></em></p>
 <a id="more"></a>
-<h2 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h2><p><img src="/images/网络.png" alt=""></p>
-<ul>
-<li>OSI 七层模型。自下向上：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</li>
-<li>TCPIP 四层模型：网络接口层，网际层，传输层，应用层</li>
-</ul>
-<h2 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP UDP"></a>TCP UDP</h2><p>所谓的建立连接，是为了在客户端和服务端维护连接，而建立一定的数据结构来维护双方交互的状态，用这样的数据结构来保证所谓的面向连接的特性。</p>
-<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p><img src="/images/DraggedImage.jpg" alt=""></p>
-<p>A 先说“我不玩了”，进入 FIN_WAIT_1状态，<br>B 接收，发送“知道了”，进入 CLOSE_WAIT 状态<br>A 接收，进入 FIN_WAIT_2状态（等待超时 if B 跑路）<br>B 发送“我不玩了”<br>A 接收，发送回应（ACK），结束 FIN_WAIT_2状态，进入 TIME_WAIT.</p>
-<p>TIME_WAIT 为两个 MSL（最大报文存活时长）</p>
-<p><strong>为什么两个最大报文存活时长</strong></p>
-<ol>
-<li>确保最后一个确认报文段能够到达。如果 B 没有收到 A 发来的确认报文段，那么久会重新发送连接释放请求报文段，A 等待一段时间就是为了处理这种情况的发生。</li>
-<li>可能存在“已失效的连接请求报文段”，为了防止这种报文段出现在本次链接之外，需要等待一段时间，防止串话。</li>
-</ol>
-<p><img src="/images/DraggedImage.eff5d057f282408e8046d1cfc197adde.png" alt=""></p>
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p><img src="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg" alt=""></p>
-<p>一开始，客户端和服务端都处于 close 状态，先是服务端主动监听某个端口，处于 <em>Listen</em> 状态，然后客户端主动发起建立<em>SYN</em>，处于<em>SYN-SEND 状态</em>，服务端收到发起的连接，返回<em>SYN</em>，并且 ACK 客户端的 SYN，处于<em>SYN-RCVD</em>状态，客户端收到服务端的 SYN 和 ACK之后，发送 ACK 的 ACK，然后处于<em>ESTABLISHED</em>状态。服务端收到 ACK 的 ACK 之后，处于<em>ESTABLISHED</em>状态。</p>
-<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>为了保障顺序性，每一个包都有一个 ID。为了保证不丢包，对于发送的包都要进行应答。但是这个应答也不是一个一个来的，而是会应答某个之前的 ID，表示都收到了，这样的模式称为<strong>累计确认</strong>或者<strong>累计应答</strong>（cumulative acknowledgment）。</p>
-<p>TCP 将所有的包按照 ID 的排列划分：</p>
-<ol>
-<li>第一部分，发送了并且已经确认的</li>
-<li>第二部分，发送了并且尚未确认的</li>
-<li>第三部分，没有发送，但是已经等待发送的</li>
-<li>第四部分，没有发送，而且暂时也不会发送</li>
-</ol>
-<p>在 TCP 里，接收端会给发送端报一个窗口的大小，叫做<em>Advertised window</em>。这个窗口的大小应该等于上面两个的第二部分加上第三部分。在对包的确认中，同时会携带一个窗口的大小。<strong>滑动窗口（rwnd）</strong>是怕发送方把接收方缓存塞满。</p>
-<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>滑动窗口是怕发送方把接收方缓存塞满，而<strong>拥塞窗口（cwnd）</strong>是怕把网络塞满。</p>
-<p>TCP 的拥塞控制主要来避免两种现象：<strong>包丢失</strong>和<strong>超时重传</strong></p>
-<h4 id="慢启动"><a href="#慢启动" class="headerlink" title="慢启动"></a>慢启动</h4><p>一条 TCP 连接开始，cwnd 设置为一个报文段，一次只能发送一个；当收到这一个确认的时候，cwnd+1，于是一次能够发送两个；当这两个的确认到来的时候，每个确认 cwnd+1，两个确认 cwnd+2，于是一次能够发送四个；当这四个确认到来的时候，每个确认 cwnd+1，四个确认 cwnd+4，于是一次能够发送八个，所以是指数型增长。</p>
-<p>涨到什么时候是个头呢，有一个值 ssthresh（slow start threshold） 为 65535 个字节，当超过这个值的时候，就不那么快了。</p>
-<p>这时，每收到一个确认后，cwnd 增加 1/cwnd，我们接着上面的过程，一次发送八个，当八个确认到来的时候，每个确认增加 1/8，八个确认一共 cwnd+1，于是一次能够发送九个，变成了线性增长。</p>
-<p>但只要增长就会越来越多。直到有一天，水满则溢，出现了拥塞，这时候一般就会一下子降低倒水的速度。</p>
-<p>拥塞的一种表现形式是丢包，需要超时重传。这个时候，将 ssthresh 设为 cwnd/2，将 cwnd 设为 1，重新开始慢启动。但这种方式太激进了，将一个高速的传输速度一下子停了下来，会造成网络卡顿。</p>
-<h4 id="快速重传算法"><a href="#快速重传算法" class="headerlink" title="快速重传算法"></a>快速重传算法</h4><p>当接收端发现丢了一个中间包的时候，发送三次前一个包的 ACK，于是发送端就会快速的重传，不必等待超时再重传。这时 cwnd=cwnd/2，ssthresh=cwnd，当三个包返回的时候，cwnd=ssthresh+3。</p>
-<p>后来还有<strong>BBR 拥塞算法</strong>，它企图找到一个平衡点，就是通过不断的加快发送速度，将管道填满，但是不填满中间设备的缓存，因为这样延时会增加。</p>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="What-will-happen-when-you-input-URL-into-Browser"><a href="#What-will-happen-when-you-input-URL-into-Browser" class="headerlink" title="What will happen when you input URL into Browser."></a>What will happen when you input URL into Browser.</h3><ol>
-<li>Use the URL to get the IP address by submit it to ISP and DMS turn it into IP address</li>
-<li>New HTTP request is sent including your IP address. the time you sent it and the page you asking for</li>
-<li>The server get the request. go the database to get the data, compile them into a long html file and send it back to your IP as HTTP response</li>
-<li>The browser render the page.</li>
-</ol>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
-<li>GET。GET 就是去服务器获取一些资源。</li>
-<li>POST。它需要主动告诉服务端一些信息。要告诉服务端什么呢？一般会放到正文里。（常见格式 JSON）</li>
-<li>PUT。向指定资源位置上传最新内容。</li>
-<li>DELETE。用来删除资源</li>
-</ul>
-<h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><ul>
-<li>IP 地址是一个网卡在网络世界中的通讯地址，相当于现实世界中的门牌号</li>
-<li>无类型域间选路 CIDR （Classless Inter-Domain Routing）xx.xxx.xxx.xx/24 32位中，前24位是网络号</li>
-<li>将子网掩码和 IP 地址按位运算AND，就得到网络号</li>
-<li>IP 是地址，有定位功能， MAC 是身份证，无定位功能</li>
-<li>CIDR 可以判断是不是本地</li>
-</ul>
-<p>DHCP 动态主机配置协议</p>
+<p>进程（process）和线程（thread）是操作系统的基本概念，但是它们比较抽象，不容易掌握。</p>
+<p>最近，我读到一篇材料，发现有一个很好的类比，可以把它们解释地清晰易懂。</p>
+<p>1.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042401.jpg" alt=""></p>
+<p>计算机的核心是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。</p>
+<p>2.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042402.png" alt=""></p>
+<p>假定工厂的电力有限，一次只能供给一个车间使用。也就是说，一个车间开工的时候，其他车间都必须停工。背后的含义就是，单个CPU一次只能运行一个任务。</p>
+<p>3.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042403.jpg" alt=""></p>
+<p>进程就好比工厂的车间，它代表CPU所能处理的单个任务。任一时刻，CPU总是运行一个进程，其他进程处于非运行状态。</p>
+<p>4.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042404.jpg" alt=""></p>
+<p>一个车间里，可以有很多工人。他们协同完成一个任务。</p>
+<p>5.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042405.jpg" alt=""></p>
+<p>线程就好比车间里的工人。一个进程可以包括多个线程。</p>
+<p>6.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042406.png" alt=""></p>
+<p>车间的空间是工人们共享的，比如许多房间是每个工人都可以进出的。这象征一个进程的内存空间是共享的，每个线程都可以使用这些共享内存。</p>
+<p>7.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042407.jpg" alt=""></p>
+<p>可是，每间房间的大小不同，有些房间最多只能容纳一个人，比如厕所。里面有人的时候，其他人就不能进去了。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</p>
+<p>8.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042408.jpg" alt=""></p>
+<p>一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫”互斥锁”（Mutual exclusion，缩写 Mutex），防止多个线程同时读写某一块内存区域。</p>
+<p>9.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042409.jpg" alt=""></p>
+<p>还有些房间，可以同时容纳n个人，比如厨房。也就是说，如果人数大于n，多出来的人只能在外面等着。这好比某些内存区域，只能供给固定数目的线程使用。</p>
+<p>10.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042410.jpg" alt=""></p>
+<p>这时的解决方法，就是在门口挂n把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做”信号量”（Semaphore），用来保证多个线程不会互相冲突。</p>
+<p>不难看出，mutex是semaphore的一种特殊情况（n=1时）。也就是说，完全可以用后者替代前者。但是，因为mutex较为简单，且效率高，所以在必须保证资源独占的情况下，还是采用这种设计。</p>
+<p>11.</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201304/bg2013042411.png" alt=""></p>
+<p>操作系统的设计，因此可以归结为三点：</p>
+<p>（1）以多进程形式，允许多个任务同时运行；</p>
+<p>（2）以多线程形式，允许单个任务分成不同的部分运行；</p>
+<p>（3）提供协调机制，一方面防止进程之间和线程之间产生冲突，另一方面允许进程之间和线程之间共享资源。</p>
 
       
     </div>
@@ -604,7 +595,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络/" rel="tag"># 网络</a>
+            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
           
         </div>
       
@@ -617,8 +608,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/27/关于数据库的一些基础知识/" rel="next" title="关于数据库的一些基础知识">
-                <i class="fa fa-chevron-left"></i> 关于数据库的一些基础知识
+              <a href="/2019/05/27/关于网络的一些基础知识/" rel="next" title="关于网络的一些基础知识">
+                <i class="fa fa-chevron-left"></i> 关于网络的一些基础知识
               </a>
             
           </div>
@@ -627,8 +618,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/28/进程与线程的简单解释/" rel="prev" title="进程与线程的简单解释">
-                进程与线程的简单解释 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/28/进程与线程的区别/" rel="prev" title="进程与线程的区别">
+                进程与线程的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -677,17 +668,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -696,7 +678,7 @@
                 alt="Hao Zhao"/>
             
               <p class="site-author-name" itemprop="name">Hao Zhao</p>
-              <div class="site-description motion-element" itemprop="description">菜狗一条</div>
+              <div class="site-description motion-element" itemprop="description">Mens et manus</div>
           </div>
 
           
@@ -762,7 +744,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -851,23 +835,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络模型"><span class="nav-number">1.</span> <span class="nav-text">网络模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-UDP"><span class="nav-number">2.</span> <span class="nav-text">TCP UDP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.1.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手"><span class="nav-number">2.2.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流量控制"><span class="nav-number">2.3.</span> <span class="nav-text">流量控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥塞控制"><span class="nav-number">2.4.</span> <span class="nav-text">拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#慢启动"><span class="nav-number">2.4.1.</span> <span class="nav-text">慢启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速重传算法"><span class="nav-number">2.4.2.</span> <span class="nav-text">快速重传算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">3.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-will-happen-when-you-input-URL-into-Browser"><span class="nav-number">3.1.</span> <span class="nav-text">What will happen when you input URL into Browser.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">3.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS"><span class="nav-number">4.</span> <span class="nav-text">PS</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
