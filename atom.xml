@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhstark.com/"/>
-  <updated>2020-11-22T01:14:49.833Z</updated>
+  <updated>2020-11-22T01:15:39.045Z</updated>
   <id>http://zhstark.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://zhstark.com/2020/11/21/%E5%AD%98%E5%82%A8%E5%9E%8BXSS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1/"/>
     <id>http://zhstark.com/2020/11/21/存储型XSS攻击与防御/</id>
     <published>2020-11-22T01:14:49.000Z</published>
-    <updated>2020-11-22T01:14:49.833Z</updated>
+    <updated>2020-11-22T01:15:39.045Z</updated>
     
     <content type="html"><![CDATA[<p>工作中网页要添加支持富文本功能，我写的 tech spec 讲富文本直接导出相应的 html format，后端直接存储 html。组里大佬敏锐的提出了直接使用 HTML 的安全隐患。</p><a id="more"></a><blockquote><p>Storing HTML would make me nervous – there are many potential attack vectors when re-displaying that content on the webpage (especially if you combine that with another ongoing discussion about user impersonation!). We’d probably want to tread lightly here and sanitize the HTML with a whitelist of elements before displaying it back out.</p></blockquote><p>回头自己搜了一下，原来他所担忧的是可能会被 XSS 攻击。</p><h2 id="什么是-XSS-攻击"><a href="#什么是-XSS-攻击" class="headerlink" title="什么是 XSS 攻击"></a>什么是 XSS 攻击</h2><p>XSS 全称Cross Site Script，叫做「跨站脚本攻击」，是指用户注入恶意的代码，如果浏览器和服务器都没有对该输入进行过滤，导致用户注入的脚本嵌入到了页面中。由于浏览器无法识别这些恶意代码正常解析执行，攻击者的恶意操作被成功执行，比如可以获取用户的cookie数据然后发送给自己或者冒充正常用户向被攻击的服务器发送请求。举个简单的例子，用户直接在富文本里写 js 脚本：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;js bad code...&lt;/script&gt;</div></pre></td></tr></table></figure><p>由于没有过滤，该文本内容会由后端直接返回到其他用户浏览器，那么这段文本可能就不是以文本方式出现，而是被浏览器误以为是要去执行的一段代码，这样就是被攻击了。</p><h2 id="防范存储型-XSS-攻击"><a href="#防范存储型-XSS-攻击" class="headerlink" title="防范存储型 XSS 攻击"></a>防范存储型 XSS 攻击</h2><p>防范 XSS 攻击的奥义在于永远不要相信用户的输入。</p><p>先来看看存储型 XSS 的攻击步骤：</p><p>1.攻击者将恶意代码提交到目标网站的数据库中。<br>2.用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。<br>3.用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。<br>4.恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。</p><p>XSS 过滤主要有两种模式：黑名单和白名单。</p><ul><li>基于黑名单的 XSS 过滤，将转义或移除黑名单中的标签和属性。</li><li>基于白名单的 XSS 过滤，仅允许白名单中的标签和属性存在，其他全部转义或移除。</li></ul><p>由于使用黑名单可能会有漏网之鱼存在，一般多是采用白名单。</p><p>方法也看起来很简单：要求用户仅能输入指定、有限的标签和属性。前端可以通过富文本编辑器配置，仅显示指定标签，提升用用户体验。后端不能直接信任前端数据，需要基于白名单再次过滤。这样可以保证，入库的数据都是可信任的。</p>]]></content>
     
@@ -30,6 +30,8 @@
       &lt;p&gt;工作中网页要添加支持富文本功能，我写的 tech spec 讲富文本直接导出相应的 html format，后端直接存储 html。组里大佬敏锐的提出了直接使用 HTML 的安全隐患。&lt;/p&gt;
     
     </summary>
+    
+      <category term="学习笔记" scheme="http://zhstark.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="技术" scheme="http://zhstark.com/tags/%E6%8A%80%E6%9C%AF/"/>
