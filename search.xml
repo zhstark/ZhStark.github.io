@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[存储型XSS攻击与防御]]></title>
+    <url>%2F2020%2F11%2F21%2F%E5%AD%98%E5%82%A8%E5%9E%8BXSS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1%2F</url>
+    <content type="text"><![CDATA[工作中网页要添加支持富文本功能，我写的 tech spec 讲富文本直接导出相应的 html format，后端直接存储 html。组里大佬敏锐的提出了直接使用 HTML 的安全隐患。 Storing HTML would make me nervous – there are many potential attack vectors when re-displaying that content on the webpage (especially if you combine that with another ongoing discussion about user impersonation!). We’d probably want to tread lightly here and sanitize the HTML with a whitelist of elements before displaying it back out. 回头自己搜了一下，原来他所担忧的是可能会被 XSS 攻击。 什么是 XSS 攻击XSS 全称Cross Site Script，叫做「跨站脚本攻击」，是指用户注入恶意的代码，如果浏览器和服务器都没有对该输入进行过滤，导致用户注入的脚本嵌入到了页面中。由于浏览器无法识别这些恶意代码正常解析执行，攻击者的恶意操作被成功执行，比如可以获取用户的cookie数据然后发送给自己或者冒充正常用户向被攻击的服务器发送请求。举个简单的例子，用户直接在富文本里写 js 脚本： 1&lt;script&gt;js bad code...&lt;/script&gt; 由于没有过滤，该文本内容会由后端直接返回到其他用户浏览器，那么这段文本可能就不是以文本方式出现，而是被浏览器误以为是要去执行的一段代码，这样就是被攻击了。 防范存储型 XSS 攻击防范 XSS 攻击的奥义在于永远不要相信用户的输入。 先来看看存储型 XSS 的攻击步骤： 1.攻击者将恶意代码提交到目标网站的数据库中。2.用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。3.用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。4.恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。 XSS 过滤主要有两种模式：黑名单和白名单。 基于黑名单的 XSS 过滤，将转义或移除黑名单中的标签和属性。 基于白名单的 XSS 过滤，仅允许白名单中的标签和属性存在，其他全部转义或移除。 由于使用黑名单可能会有漏网之鱼存在，一般多是采用白名单。 方法也看起来很简单：要求用户仅能输入指定、有限的标签和属性。前端可以通过富文本编辑器配置，仅显示指定标签，提升用用户体验。后端不能直接信任前端数据，需要基于白名单再次过滤。这样可以保证，入库的数据都是可信任的。]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[自建shadowsocks翻墙服务]]></title>
     <url>%2F2020%2F03%2F12%2F%E8%87%AA%E5%BB%BAshadowsocks%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1%2F</url>
     <content type="text"><![CDATA[Google Cloud 一年免费，不用白不用，本来是想用来做个微信机器人的，但是在登录的时候发现微信把 web 端关了，没有接口获取数据，直接流产。就先用来搭个翻墙服务器吧，以后回国用。 一 安装我这里是 CentOS 系统 可以先进入 root 用户，这样就不用输入 sudo 了 123sudo yum install python-pipsudo yum install python-setuptools &amp;&amp; easy_install pipsudo pip install shadowsocks 二 配置sudo vi /etc/shadowsocks.json 输入下面 12345678910&#123; &quot;server&quot;: &quot;my_server_ip&quot;, // 这里输入本机的 IP 地址 &quot;server_port&quot;: 8388, // 为了安全，可修改为大于 1024 的数字 &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;: 1080, // 为了安全，可修改为大于 1024 的数字 &quot;password&quot;: &quot;mypassword&quot;, // 设置一个密码 &quot;timeout&quot;: 300, &quot;method&quot;: &quot;aes-256-cfb&quot;, &quot;fast_open&quot;: false&#125; 三 qids1$ ssserve -c /etc/shadowsocks.json -d start]]></content>
