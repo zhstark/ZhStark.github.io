@@ -18,8 +18,8 @@
   
   <entry>
     <title>存储型XSS攻击与防御</title>
-    <link href="http://zhstark.com/2020/11/21/%E5%AD%98%E5%82%A8%E5%9E%8BXSS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1/"/>
-    <id>http://zhstark.com/2020/11/21/存储型XSS攻击与防御/</id>
+    <link href="http://zhstark.com/2020/11/22/%E5%AD%98%E5%82%A8%E5%9E%8BXSS%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%BE%A1/"/>
+    <id>http://zhstark.com/2020/11/22/存储型XSS攻击与防御/</id>
     <published>2020-11-22T01:14:49.000Z</published>
     <updated>2020-11-22T01:15:39.045Z</updated>
     
@@ -39,17 +39,17 @@
   </entry>
   
   <entry>
-    <title>自建shadowsocks翻墙服务</title>
+    <title>自建shadowsocks服务</title>
     <link href="http://zhstark.com/2020/03/12/%E8%87%AA%E5%BB%BAshadowsocks%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1/"/>
     <id>http://zhstark.com/2020/03/12/自建shadowsocks翻墙服务/</id>
-    <published>2020-03-13T05:51:26.000Z</published>
-    <updated>2020-03-14T03:09:38.474Z</updated>
+    <published>2020-03-12T14:51:26.000Z</published>
+    <updated>2021-02-14T10:05:27.947Z</updated>
     
-    <content type="html"><![CDATA[<p>Google Cloud 一年免费，不用白不用，本来是想用来做个微信机器人的，但是在登录的时候发现微信把 web 端关了，没有接口获取数据，直接流产。就先用来搭个翻墙服务器吧，以后回国用。</p><a id="more"></a><h2 id="一-安装"><a href="#一-安装" class="headerlink" title="一 安装"></a>一 安装</h2><p>我这里是 CentOS 系统</p><p>可以先进入 root 用户，这样就不用输入 <code>sudo</code> 了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo yum install python-pip</div><div class="line">sudo yum install python-setuptools &amp;&amp; easy_install pip</div><div class="line">sudo pip install shadowsocks</div></pre></td></tr></table></figure><h2 id="二-配置"><a href="#二-配置" class="headerlink" title="二 配置"></a>二 配置</h2><p><code>sudo vi /etc/shadowsocks.json</code></p><p>输入下面</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;my_server_ip&quot;, // 这里输入本机的 IP 地址</div><div class="line">    &quot;server_port&quot;: 8388, // 为了安全，可修改为大于 1024 的数字</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080, // 为了安全，可修改为大于 1024 的数字</div><div class="line">    &quot;password&quot;: &quot;mypassword&quot;, // 设置一个密码</div><div class="line">    &quot;timeout&quot;: 300,</div><div class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="三-qids"><a href="#三-qids" class="headerlink" title="三 qids"></a>三 qids</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssserve -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Google Cloud 一年免费，不用白不用，本来是想用来做个微信机器人的，但是在登录的时候发现微信把 web 端关了，没有接口获取数据，直接流产。就先用来搭个FQ服务器吧，以后回国用。</p><a id="more"></a><h2 id="一-安装"><a href="#一-安装" class="headerlink" title="一 安装"></a>一 安装</h2><p>我这里是 CentOS 系统</p><p>可以先进入 root 用户，这样就不用输入 <code>sudo</code> 了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo yum install python-pip</div><div class="line">sudo yum install python-setuptools &amp;&amp; easy_install pip</div><div class="line">sudo pip install shadowsocks</div></pre></td></tr></table></figure><h2 id="二-配置"><a href="#二-配置" class="headerlink" title="二 配置"></a>二 配置</h2><p><code>sudo vi /etc/shadowsocks.json</code></p><p>输入下面</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;my_server_ip&quot;, // 这里输入本机的 IP 地址</div><div class="line">    &quot;server_port&quot;: 8388, // 为了安全，可修改为大于 1024 的数字</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080, // 为了安全，可修改为大于 1024 的数字</div><div class="line">    &quot;password&quot;: &quot;mypassword&quot;, // 设置一个密码</div><div class="line">    &quot;timeout&quot;: 300,</div><div class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="三-qids"><a href="#三-qids" class="headerlink" title="三 qids"></a>三 qids</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssserve -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Google Cloud 一年免费，不用白不用，本来是想用来做个微信机器人的，但是在登录的时候发现微信把 web 端关了，没有接口获取数据，直接流产。就先用来搭个翻墙服务器吧，以后回国用。&lt;/p&gt;
+      &lt;p&gt;Google Cloud 一年免费，不用白不用，本来是想用来做个微信机器人的，但是在登录的时候发现微信把 web 端关了，没有接口获取数据，直接流产。就先用来搭个FQ服务器吧，以后回国用。&lt;/p&gt;
     
     </summary>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>Java笔记</title>
-    <link href="http://zhstark.com/2019/11/18/Java%E7%AC%94%E8%AE%B0/"/>
-    <id>http://zhstark.com/2019/11/18/Java笔记/</id>
+    <link href="http://zhstark.com/2019/11/19/Java%E7%AC%94%E8%AE%B0/"/>
+    <id>http://zhstark.com/2019/11/19/Java笔记/</id>
     <published>2019-11-18T23:50:05.000Z</published>
     <updated>2020-08-04T21:50:22.379Z</updated>
     
@@ -84,8 +84,8 @@
   
   <entry>
     <title>Java中的length,length()和size()</title>
-    <link href="http://zhstark.com/2019/08/17/Java%E4%B8%AD%E7%9A%84length-length-%E5%92%8Csize/"/>
-    <id>http://zhstark.com/2019/08/17/Java中的length-length-和size/</id>
+    <link href="http://zhstark.com/2019/08/18/Java%E4%B8%AD%E7%9A%84length-length-%E5%92%8Csize/"/>
+    <id>http://zhstark.com/2019/08/18/Java中的length-length-和size/</id>
     <published>2019-08-17T22:55:01.000Z</published>
     <updated>2019-08-17T12:27:35.961Z</updated>
     
@@ -106,8 +106,8 @@
   
   <entry>
     <title>springboot连接操作mysql</title>
-    <link href="http://zhstark.com/2019/08/12/springboot%E9%93%BE%E6%8E%A5mysql/"/>
-    <id>http://zhstark.com/2019/08/12/springboot链接mysql/</id>
+    <link href="http://zhstark.com/2019/08/13/springboot%E9%93%BE%E6%8E%A5mysql/"/>
+    <id>http://zhstark.com/2019/08/13/springboot链接mysql/</id>
     <published>2019-08-12T23:29:58.000Z</published>
     <updated>2019-08-15T08:14:33.844Z</updated>
     
@@ -129,8 +129,8 @@
   
   <entry>
     <title>double类型比较</title>
-    <link href="http://zhstark.com/2019/07/30/double%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83/"/>
-    <id>http://zhstark.com/2019/07/30/double类型比较/</id>
+    <link href="http://zhstark.com/2019/07/31/double%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83/"/>
+    <id>http://zhstark.com/2019/07/31/double类型比较/</id>
     <published>2019-07-31T01:29:51.000Z</published>
     <updated>2019-08-14T10:03:46.842Z</updated>
     
@@ -150,8 +150,8 @@
   
   <entry>
     <title>补码</title>
-    <link href="http://zhstark.com/2019/06/03/%E8%A1%A5%E7%A0%81/"/>
-    <id>http://zhstark.com/2019/06/03/补码/</id>
+    <link href="http://zhstark.com/2019/06/04/%E8%A1%A5%E7%A0%81/"/>
+    <id>http://zhstark.com/2019/06/04/补码/</id>
     <published>2019-06-04T04:19:01.000Z</published>
     <updated>2019-06-03T13:19:46.493Z</updated>
     
@@ -179,8 +179,8 @@
   
   <entry>
     <title>CAP定理</title>
-    <link href="http://zhstark.com/2019/05/28/CAP%E5%AE%9A%E7%90%86/"/>
-    <id>http://zhstark.com/2019/05/28/CAP定理/</id>
+    <link href="http://zhstark.com/2019/05/29/CAP%E5%AE%9A%E7%90%86/"/>
+    <id>http://zhstark.com/2019/05/29/CAP定理/</id>
     <published>2019-05-29T06:11:43.000Z</published>
     <updated>2019-05-28T15:12:16.486Z</updated>
     
@@ -205,8 +205,8 @@
   
   <entry>
     <title>线程间通信</title>
-    <link href="http://zhstark.com/2019/05/28/%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
-    <id>http://zhstark.com/2019/05/28/线程间通信/</id>
+    <link href="http://zhstark.com/2019/05/29/%E7%BA%BF%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/"/>
+    <id>http://zhstark.com/2019/05/29/线程间通信/</id>
     <published>2019-05-28T23:58:37.000Z</published>
     <updated>2019-05-28T12:55:36.785Z</updated>
     
@@ -234,8 +234,8 @@
   
   <entry>
     <title>进程间的通信</title>
-    <link href="http://zhstark.com/2019/05/28/%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/"/>
-    <id>http://zhstark.com/2019/05/28/进程间的通信/</id>
+    <link href="http://zhstark.com/2019/05/29/%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1/"/>
+    <id>http://zhstark.com/2019/05/29/进程间的通信/</id>
     <published>2019-05-28T23:41:56.000Z</published>
     <updated>2019-05-28T08:51:53.468Z</updated>
     
@@ -257,8 +257,8 @@
   
   <entry>
     <title>进程与线程的区别</title>
-    <link href="http://zhstark.com/2019/05/28/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://zhstark.com/2019/05/28/进程与线程的区别/</id>
+    <link href="http://zhstark.com/2019/05/29/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://zhstark.com/2019/05/29/进程与线程的区别/</id>
     <published>2019-05-28T23:40:34.000Z</published>
     <updated>2019-05-28T08:41:02.459Z</updated>
     
@@ -279,8 +279,8 @@
   
   <entry>
     <title>进程与线程的简单解释</title>
-    <link href="http://zhstark.com/2019/05/28/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%A7%A3%E9%87%8A/"/>
-    <id>http://zhstark.com/2019/05/28/进程与线程的简单解释/</id>
+    <link href="http://zhstark.com/2019/05/29/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%AE%80%E5%8D%95%E8%A7%A3%E9%87%8A/"/>
+    <id>http://zhstark.com/2019/05/29/进程与线程的简单解释/</id>
     <published>2019-05-28T18:06:50.000Z</published>
     <updated>2019-05-28T03:16:38.274Z</updated>
     
@@ -301,8 +301,8 @@
   
   <entry>
     <title>关于网络的一些基础知识</title>
-    <link href="http://zhstark.com/2019/05/28/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://zhstark.com/2019/05/28/关于网络的一些基础知识/</id>
+    <link href="http://zhstark.com/2019/05/29/%E5%85%B3%E4%BA%8E%E7%BD%91%E7%BB%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://zhstark.com/2019/05/29/关于网络的一些基础知识/</id>
     <published>2019-05-28T17:48:20.000Z</published>
     <updated>2019-05-28T03:50:11.875Z</updated>
     
@@ -323,8 +323,8 @@
   
   <entry>
     <title>关于数据库的一些基础知识</title>
-    <link href="http://zhstark.com/2019/05/27/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://zhstark.com/2019/05/27/关于数据库的一些基础知识/</id>
+    <link href="http://zhstark.com/2019/05/28/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://zhstark.com/2019/05/28/关于数据库的一些基础知识/</id>
     <published>2019-05-28T04:07:29.000Z</published>
     <updated>2019-05-27T13:11:43.570Z</updated>
     
@@ -345,8 +345,8 @@
   
   <entry>
     <title>重学c++5 函数</title>
-    <link href="http://zhstark.com/2019/04/25/%E9%87%8D%E5%AD%A6cpp%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0/"/>
-    <id>http://zhstark.com/2019/04/25/重学cpp函数的参数/</id>
+    <link href="http://zhstark.com/2019/04/26/%E9%87%8D%E5%AD%A6cpp%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0/"/>
+    <id>http://zhstark.com/2019/04/26/重学cpp函数的参数/</id>
     <published>2019-04-26T06:15:18.000Z</published>
     <updated>2019-05-01T13:31:48.301Z</updated>
     
@@ -367,8 +367,8 @@
   
   <entry>
     <title>重学cpp4 数组</title>
-    <link href="http://zhstark.com/2019/03/25/%E9%87%8D%E5%AD%A6cpp-array/"/>
-    <id>http://zhstark.com/2019/03/25/重学cpp-array/</id>
+    <link href="http://zhstark.com/2019/03/26/%E9%87%8D%E5%AD%A6cpp-array/"/>
+    <id>http://zhstark.com/2019/03/26/重学cpp-array/</id>
     <published>2019-03-26T04:00:32.000Z</published>
     <updated>2019-04-26T04:30:57.319Z</updated>
     
@@ -389,8 +389,8 @@
   
   <entry>
     <title>重学c++3 decltype &amp; string</title>
-    <link href="http://zhstark.com/2019/03/24/%E9%87%8D%E5%AD%A6cpp-decltype-and-string/"/>
-    <id>http://zhstark.com/2019/03/24/重学cpp-decltype-and-string/</id>
+    <link href="http://zhstark.com/2019/03/25/%E9%87%8D%E5%AD%A6cpp-decltype-and-string/"/>
+    <id>http://zhstark.com/2019/03/25/重学cpp-decltype-and-string/</id>
     <published>2019-03-25T03:40:32.000Z</published>
     <updated>2019-04-26T04:30:37.878Z</updated>
     
@@ -411,8 +411,8 @@
   
   <entry>
     <title>重学C++2  const</title>
-    <link href="http://zhstark.com/2019/03/16/%E9%87%8D%E5%AD%A6cpp-const/"/>
-    <id>http://zhstark.com/2019/03/16/重学cpp-const/</id>
+    <link href="http://zhstark.com/2019/03/17/%E9%87%8D%E5%AD%A6cpp-const/"/>
+    <id>http://zhstark.com/2019/03/17/重学cpp-const/</id>
     <published>2019-03-17T04:27:59.000Z</published>
     <updated>2019-04-26T04:27:00.944Z</updated>
     
@@ -433,8 +433,8 @@
   
   <entry>
     <title>重学 C++</title>
-    <link href="http://zhstark.com/2019/03/09/%E9%87%8D%E5%AD%A6%20cpp/"/>
-    <id>http://zhstark.com/2019/03/09/重学 cpp/</id>
+    <link href="http://zhstark.com/2019/03/10/%E9%87%8D%E5%AD%A6%20cpp/"/>
+    <id>http://zhstark.com/2019/03/10/重学 cpp/</id>
     <published>2019-03-10T01:38:52.000Z</published>
     <updated>2019-04-26T03:15:57.085Z</updated>
     
@@ -455,8 +455,8 @@
   
   <entry>
     <title>C++函数的参数的不同传递方式</title>
-    <link href="http://zhstark.com/2019/02/28/C-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%8D%E5%90%8C%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F/"/>
-    <id>http://zhstark.com/2019/02/28/C-函数的参数的不同传递方式/</id>
+    <link href="http://zhstark.com/2019/03/01/C-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%8D%E5%90%8C%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F/"/>
+    <id>http://zhstark.com/2019/03/01/C-函数的参数的不同传递方式/</id>
     <published>2019-03-01T06:52:28.000Z</published>
     <updated>2019-03-01T04:49:13.552Z</updated>
     
