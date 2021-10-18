@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zhstark.com/2021/08/31/my-mac-config/</loc>
+    <lastmod>2021-10-18</lastmod>
+  </url>  <url>
+    <loc>http://zhstark.com/2019/08/12/springboot%E9%93%BE%E6%8E%A5mysql/</loc>
+    <lastmod>2021-10-15</lastmod>
+  </url>  <url>
     <loc>http://zhstark.com/2021/09/02/2021%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</loc>
     <lastmod>2021-09-16</lastmod>
-  </url>  <url>
-    <loc>http://zhstark.com/2021/08/31/my-mac-config/</loc>
-    <lastmod>2021-09-01</lastmod>
   </url>  <url>
     <loc>http://zhstark.com/2020/03/12/%E8%87%AA%E5%BB%BAshadowsocks%E7%BF%BB%E5%A2%99%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2021-02-14</lastmod>
@@ -18,9 +21,6 @@
   </url>  <url>
     <loc>http://zhstark.com/2019/08/17/Java%E4%B8%AD%E7%9A%84length-length-%E5%92%8Csize/</loc>
     <lastmod>2019-08-17</lastmod>
-  </url>  <url>
-    <loc>http://zhstark.com/2019/08/12/springboot%E9%93%BE%E6%8E%A5mysql/</loc>
-    <lastmod>2019-08-15</lastmod>
   </url>  <url>
     <loc>http://zhstark.com/2019/07/30/double%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83/</loc>
     <lastmod>2019-08-14</lastmod>
