@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://zhstark.com/2021/08/31/my-mac-config/index.html">
 <meta property="og:site_name" content="小豪's blog">
 <meta property="og:description" content="我又回来了，整理一下我的 Mac 软件与服务配置，有时间开始写文章，之前打算记录一下自己的工作历程，还有之前在美国 Perry 教我的一些东西。">
-<meta property="og:updated_time" content="2021-10-18T07:02:27.773Z">
+<meta property="og:updated_time" content="2021-10-19T02:51:15.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my-mac-setup">
 <meta name="twitter:description" content="我又回来了，整理一下我的 Mac 软件与服务配置，有时间开始写文章，之前打算记录一下自己的工作历程，还有之前在美国 Perry 教我的一些东西。">
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.3k</span>
+                <span title="本文字数">3.6k</span>
               
 
               
@@ -520,7 +520,7 @@
 </ul>
 <h2 id="开发工具">开发工具</h2>
 <ul>
-<li>Docker</li>
+<li>Docker compose</li>
 <li>Intellig 全家桶
 <ul>
 <li>IDEA</li>
@@ -561,7 +561,7 @@
 <ul>
 <li>homebrew 由于源的关系，在国内使用这个：<a href="https://gitee.com/cunkai/HomebrewCN?_from=gitee_search" target="_blank" rel="external">https://gitee.com/cunkai/HomebrewCN?_from=gitee_search</a> 国内源下载更加方便</li>
 <li>Git</li>
-<li>JDK</li>
+<li>JDK ref:<a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1280507291631649" target="_blank" rel="external">https://www.liaoxuefeng.com/wiki/1252599548343744/1280507291631649</a></li>
 <li>python3</li>
 <li>maven</li>
 <li>npm</li>
@@ -594,7 +594,11 @@
 5.  数据备份，代码，各种资料，博客
 6.  开发软件的插件、主题
 7.  zsh 配置
-->-->
+-->
+<h2 id="配置">配置</h2>
+<p><strong>.zshrc</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"># If you come from bash you might have to change your $PATH.</div><div class="line"># export PATH=$HOME/bin:/usr/local/bin:$PATH</div><div class="line"></div><div class="line"># Path to your oh-my-zsh installation.</div><div class="line">export ZSH=$HOME/.oh-my-zsh</div><div class="line"></div><div class="line"># Set name of the theme to load --- if set to "random", it will</div><div class="line"># load a random theme each time oh-my-zsh is loaded, in which case,</div><div class="line"># to know which specific one was loaded, run: echo $RANDOM_THEME</div><div class="line"># See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</div><div class="line">ZSH_THEME="agnoster"</div><div class="line"></div><div class="line">............</div><div class="line"></div><div class="line"># Which plugins would you like to load?</div><div class="line"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</div><div class="line"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</div><div class="line"># Example format: plugins=(rails git textmate ruby lighthouse)</div><div class="line"># Add wisely, as too many plugins slow down shell startup.</div><div class="line">plugins=(zsh-syntax-highlighting)</div><div class="line"></div><div class="line">source $ZSH/oh-my-zsh.sh</div><div class="line"></div><div class="line"># User configuration</div><div class="line"></div><div class="line">.........</div><div class="line"></div><div class="line">#</div><div class="line"># Example aliases</div><div class="line"># alias zshconfig="mate ~/.zshrc"</div><div class="line"># alias ohmyzsh="mate ~/.oh-my-zsh"</div><div class="line">alias startredis="sudo /usr/local/redis-5.0.5/src/redis-server /usr/local/redis-5.0.5/etc/redis.conf"</div><div class="line">alias shutdownredis="redis-cli shutdown"</div><div class="line">alias hgd="hexo generate --deploy"</div><div class="line">alias startvenv="source $&#123;HOME&#125;/Documents/IT/code/Python/.venv/tutorial-env/bin/activate"</div><div class="line">alias startpostgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"</div><div class="line">alias stoppostgres="pg_ctl -D /usr/local/var/postgres stop"</div><div class="line">alias avdownload="ffmpeg -user-agent 'User_Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36' -i"</div><div class="line">alias windows="sudo -b /Applications/Parallels\ Desktop.app/Contents/MacOS/prl_client_app"</div><div class="line"># prompt_segment() - Takes two arguments, background and foreground.</div><div class="line"># Both can be omitted, rendering default background/foreground.</div><div class="line">prompt_context() &#123;</div><div class="line">  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then</div><div class="line">    prompt_segment 'yello' 'black' "zhStark"</div><div class="line">  fi</div><div class="line">&#125;</div><div class="line">export PATH="/usr/local/opt/python@3.7/bin:$PATH"</div><div class="line">export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)</div><div class="line">export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8.0)</div><div class="line">alias java8='export JAVA_HOME=$JAVA_8_HOME'</div><div class="line">alias java11='export JAVA_HOME=$JAVA_11_HOME'</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -914,7 +918,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#装机必备"><span class="nav-number">1.</span> <span class="nav-text">装机必备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效率工具"><span class="nav-number">2.</span> <span class="nav-text">效率工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发工具"><span class="nav-number">3.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#办公软件"><span class="nav-number">4.</span> <span class="nav-text">办公软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">6.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解版"><span class="nav-number">7.</span> <span class="nav-text">破解版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#装机必备"><span class="nav-number">1.</span> <span class="nav-text">装机必备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效率工具"><span class="nav-number">2.</span> <span class="nav-text">效率工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发工具"><span class="nav-number">3.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#办公软件"><span class="nav-number">4.</span> <span class="nav-text">办公软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">6.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解版"><span class="nav-number">7.</span> <span class="nav-text">破解版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">8.</span> <span class="nav-text">配置</span></a></li></ol></div>
             
 
           </div>
@@ -947,7 +951,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">63k</span>
+    <span title="站点总字数">71k</span>
   
 
   
@@ -956,7 +960,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">57 分钟</span>
+    <span title="站点阅读时长">1:05</span>
   
 </div>
 
