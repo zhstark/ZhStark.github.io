@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhstark.com/"/>
-  <updated>2021-09-16T08:18:42.413Z</updated>
+  <updated>2021-10-29T09:12:41.599Z</updated>
   <id>http://zhstark.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://zhstark.com/2021/09/02/2021%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/"/>
     <id>http://zhstark.com/2021/09/02/2021读书清单/</id>
     <published>2021-09-02T07:42:24.000Z</published>
-    <updated>2021-09-16T08:18:42.413Z</updated>
+    <updated>2021-10-29T09:12:41.599Z</updated>
     
-    <content type="html"><![CDATA[<p>包括在读的和读完的，一年也没读几本书。</p><a id="more"></a><h2 id="技术类"><a href="#技术类" class="headerlink" title="技术类"></a>技术类</h2><ul><li>[x] 《每天 5 分钟玩转 kubernetes》</li><li>[x] 《Java 核心技术卷 I》</li><li>[ ] 《Java 核心技术卷 II》</li><li>[ ] 《代码整洁之道》</li><li>[ ] 《Effective Java》</li></ul><h2 id="投资理财"><a href="#投资理财" class="headerlink" title="投资理财"></a>投资理财</h2><ul><li>[] 《指数基金投资指南》</li></ul><h2 id="非技术类"><a href="#非技术类" class="headerlink" title="非技术类"></a>非技术类</h2><ul><li>[x] 《理性乐观派》</li><li>[x] 《月亮与六个便士》</li><li>[ ] 《原则》</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>包括在读的和读完的，一年也没读几本书。</p><a id="more"></a><h2 id="技术类">技术类</h2><ul><li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">《每天 5 分钟玩转 kubernetes》</label></li><li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">《Java 核心技术卷 I》</label></li><li><input type="checkbox" id="checkbox2"><label for="checkbox2">《Java 核心技术卷 II》</label></li><li><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">《代码整洁之道》：值得一读，想扔给那些写的像屎一样的人看一看，虽然翻译的很一般，有些内容没有开发经历过不好理解。</label></li><li><input type="checkbox" id="checkbox4"><label for="checkbox4">《Effective Java》</label></li></ul><h2 id="投资理财">投资理财</h2><ul><li>[] 《指数基金投资指南》</li></ul><h2 id="非技术类">非技术类</h2><ul><li><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">《理性乐观派》</label></li><li><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">《月亮与六个便士》：主人公就是个人渣啊，猪狗不如还歌颂他什么追求梦想，我不理解</label></li><li><input type="checkbox" id="checkbox7"><label for="checkbox7">《原则》</label></li></ul>]]></content>
     
     <summary type="html">
     
