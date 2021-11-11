@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">780</span>
+                <span title="本文字数">783</span>
               
 
               
@@ -488,13 +488,16 @@
       
         <p>Google Cloud 一年免费，不用白不用，本来是想用来做个微信机器人的，但是在登录的时候发现微信把 web 端关了，没有接口获取数据，直接流产。就先用来搭个FQ服务器吧，以后回国用。</p>
 <a id="more"></a>
-<h2 id="一-安装"><a href="#一-安装" class="headerlink" title="一 安装"></a>一 安装</h2><p>我这里是 CentOS 系统</p>
+<h2 id="一-安装">一 安装</h2>
+<p>我这里是 CentOS 系统</p>
 <p>可以先进入 root 用户，这样就不用输入 <code>sudo</code> 了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo yum install python-pip</div><div class="line">sudo yum install python-setuptools &amp;&amp; easy_install pip</div><div class="line">sudo pip install shadowsocks</div></pre></td></tr></table></figure>
-<h2 id="二-配置"><a href="#二-配置" class="headerlink" title="二 配置"></a>二 配置</h2><p><code>sudo vi /etc/shadowsocks.json</code></p>
+<h2 id="二-配置">二 配置</h2>
+<p><code>sudo vi /etc/shadowsocks.json</code></p>
 <p>输入下面</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;: &quot;my_server_ip&quot;, // 这里输入本机的 IP 地址</div><div class="line">    &quot;server_port&quot;: 8388, // 为了安全，可修改为大于 1024 的数字</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;: 1080, // 为了安全，可修改为大于 1024 的数字</div><div class="line">    &quot;password&quot;: &quot;mypassword&quot;, // 设置一个密码</div><div class="line">    &quot;timeout&quot;: 300,</div><div class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="三-qids"><a href="#三-qids" class="headerlink" title="三 qids"></a>三 qids</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssserve -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
+<h2 id="三-qids">三 qids</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssserve -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -652,7 +655,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -847,7 +850,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">76k</span>
   
 
   
@@ -856,7 +859,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:09</span>
   
 </div>
 

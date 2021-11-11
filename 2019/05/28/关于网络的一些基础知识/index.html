@@ -103,7 +103,7 @@
 <meta property="og:url" content="http://zhstark.com/2019/05/28/关于网络的一些基础知识/index.html">
 <meta property="og:site_name" content="小豪's blog">
 <meta property="og:description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
-<meta property="og:image" content="http://zhstark.com/images/网络.png">
+<meta property="og:image" content="http://zhstark.com/images/%E7%BD%91%E7%BB%9C.png">
 <meta property="og:image" content="http://zhstark.com/images/DraggedImage.jpg">
 <meta property="og:image" content="http://zhstark.com/images/DraggedImage.eff5d057f282408e8046d1cfc197adde.png">
 <meta property="og:image" content="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg">
@@ -111,7 +111,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于网络的一些基础知识">
 <meta name="twitter:description" content="包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。">
-<meta name="twitter:image" content="http://zhstark.com/images/网络.png">
+<meta name="twitter:image" content="http://zhstark.com/images/%E7%BD%91%E7%BB%9C.png">
 
 
 
@@ -493,14 +493,21 @@
       
         <p>包括网络模型，TCP 的三次握手四次挥手，流量控制、拥塞控制以及 HTTP 的一些基础知识点。</p>
 <a id="more"></a>
-<h2 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h2><p><img src="/images/网络.png" alt=""></p>
+<h2 id="网络模型">网络模型</h2>
+<p><img src="/images/%E7%BD%91%E7%BB%9C.png" alt=""></p>
 <ul>
 <li>OSI 七层模型。自下向上：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</li>
 <li>TCPIP 四层模型：网络接口层，网际层，传输层，应用层</li>
 </ul>
-<h2 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP UDP"></a>TCP UDP</h2><p>所谓的建立连接，是为了在客户端和服务端维护连接，而建立一定的数据结构来维护双方交互的状态，用这样的数据结构来保证所谓的面向连接的特性。</p>
-<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p><img src="/images/DraggedImage.jpg" alt=""></p>
-<p>A 先说“我不玩了”，进入 FIN_WAIT_1状态，<br>B 接收，发送“知道了”，进入 CLOSE_WAIT 状态<br>A 接收，进入 FIN_WAIT_2状态（等待超时 if B 跑路）<br>B 发送“我不玩了”<br>A 接收，发送回应（ACK），结束 FIN_WAIT_2状态，进入 TIME_WAIT.</p>
+<h2 id="TCP-UDP">TCP UDP</h2>
+<p>所谓的建立连接，是为了在客户端和服务端维护连接，而建立一定的数据结构来维护双方交互的状态，用这样的数据结构来保证所谓的面向连接的特性。</p>
+<h3 id="四次挥手">四次挥手</h3>
+<p><img src="/images/DraggedImage.jpg" alt=""></p>
+<p>A 先说“我不玩了”，进入 FIN_WAIT_1状态，<br>
+B 接收，发送“知道了”，进入 CLOSE_WAIT 状态<br>
+A 接收，进入 FIN_WAIT_2状态（等待超时 if B 跑路）<br>
+B 发送“我不玩了”<br>
+A 接收，发送回应（ACK），结束 FIN_WAIT_2状态，进入 TIME_WAIT.</p>
 <p>TIME_WAIT 为两个 MSL（最大报文存活时长）</p>
 <p><strong>为什么两个最大报文存活时长</strong></p>
 <ol>
@@ -508,9 +515,11 @@
 <li>可能存在“已失效的连接请求报文段”，为了防止这种报文段出现在本次链接之外，需要等待一段时间，防止串话。</li>
 </ol>
 <p><img src="/images/DraggedImage.eff5d057f282408e8046d1cfc197adde.png" alt=""></p>
-<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p><img src="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg" alt=""></p>
+<h3 id="三次握手">三次握手</h3>
+<p><img src="https://static001.geekbang.org/resource/image/66/a2/666d7d20aa907d8317af3770411f5aa2.jpg" alt=""></p>
 <p>一开始，客户端和服务端都处于 close 状态，先是服务端主动监听某个端口，处于 <em>Listen</em> 状态，然后客户端主动发起建立<em>SYN</em>，处于<em>SYN-SEND 状态</em>，服务端收到发起的连接，返回<em>SYN</em>，并且 ACK 客户端的 SYN，处于<em>SYN-RCVD</em>状态，客户端收到服务端的 SYN 和 ACK之后，发送 ACK 的 ACK，然后处于<em>ESTABLISHED</em>状态。服务端收到 ACK 的 ACK 之后，处于<em>ESTABLISHED</em>状态。</p>
-<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>为了保障顺序性，每一个包都有一个 ID。为了保证不丢包，对于发送的包都要进行应答。但是这个应答也不是一个一个来的，而是会应答某个之前的 ID，表示都收到了，这样的模式称为<strong>累计确认</strong>或者<strong>累计应答</strong>（cumulative acknowledgment）。</p>
+<h3 id="流量控制">流量控制</h3>
+<p>为了保障顺序性，每一个包都有一个 ID。为了保证不丢包，对于发送的包都要进行应答。但是这个应答也不是一个一个来的，而是会应答某个之前的 ID，表示都收到了，这样的模式称为<strong>累计确认</strong>或者<strong>累计应答</strong>（cumulative acknowledgment）。</p>
 <p>TCP 将所有的包按照 ID 的排列划分：</p>
 <ol>
 <li>第一部分，发送了并且已经确认的</li>
@@ -518,29 +527,36 @@
 <li>第三部分，没有发送，但是已经等待发送的</li>
 <li>第四部分，没有发送，而且暂时也不会发送</li>
 </ol>
-<p>在 TCP 里，接收端会给发送端报一个窗口的大小，叫做<em>Advertised window</em>。这个窗口的大小应该等于上面两个的第二部分加上第三部分。在对包的确认中，同时会携带一个窗口的大小。<strong>滑动窗口（rwnd）</strong>是怕发送方把接收方缓存塞满。</p>
-<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>滑动窗口是怕发送方把接收方缓存塞满，而<strong>拥塞窗口（cwnd）</strong>是怕把网络塞满。</p>
+<p>在 TCP 里，接收端会给发送端报一个窗口的大小，叫做<em>Advertised window</em>。这个窗口的大小应该等于上面两个的第二部分加上第三部分。在对包的确认中，同时会携带一个窗口的大小。**滑动窗口（rwnd）**是怕发送方把接收方缓存塞满。</p>
+<h3 id="拥塞控制">拥塞控制</h3>
+<p>滑动窗口是怕发送方把接收方缓存塞满，而**拥塞窗口（cwnd）**是怕把网络塞满。</p>
 <p>TCP 的拥塞控制主要来避免两种现象：<strong>包丢失</strong>和<strong>超时重传</strong></p>
-<h4 id="慢启动"><a href="#慢启动" class="headerlink" title="慢启动"></a>慢启动</h4><p>一条 TCP 连接开始，cwnd 设置为一个报文段，一次只能发送一个；当收到这一个确认的时候，cwnd+1，于是一次能够发送两个；当这两个的确认到来的时候，每个确认 cwnd+1，两个确认 cwnd+2，于是一次能够发送四个；当这四个确认到来的时候，每个确认 cwnd+1，四个确认 cwnd+4，于是一次能够发送八个，所以是指数型增长。</p>
+<h4 id="慢启动">慢启动</h4>
+<p>一条 TCP 连接开始，cwnd 设置为一个报文段，一次只能发送一个；当收到这一个确认的时候，cwnd+1，于是一次能够发送两个；当这两个的确认到来的时候，每个确认 cwnd+1，两个确认 cwnd+2，于是一次能够发送四个；当这四个确认到来的时候，每个确认 cwnd+1，四个确认 cwnd+4，于是一次能够发送八个，所以是指数型增长。</p>
 <p>涨到什么时候是个头呢，有一个值 ssthresh（slow start threshold） 为 65535 个字节，当超过这个值的时候，就不那么快了。</p>
 <p>这时，每收到一个确认后，cwnd 增加 1/cwnd，我们接着上面的过程，一次发送八个，当八个确认到来的时候，每个确认增加 1/8，八个确认一共 cwnd+1，于是一次能够发送九个，变成了线性增长。</p>
 <p>但只要增长就会越来越多。直到有一天，水满则溢，出现了拥塞，这时候一般就会一下子降低倒水的速度。</p>
 <p>拥塞的一种表现形式是丢包，需要超时重传。这个时候，将 ssthresh 设为 cwnd/2，将 cwnd 设为 1，重新开始慢启动。但这种方式太激进了，将一个高速的传输速度一下子停了下来，会造成网络卡顿。</p>
-<h4 id="快速重传算法"><a href="#快速重传算法" class="headerlink" title="快速重传算法"></a>快速重传算法</h4><p>当接收端发现丢了一个中间包的时候，发送三次前一个包的 ACK，于是发送端就会快速的重传，不必等待超时再重传。这时 cwnd=cwnd/2，ssthresh=cwnd，当三个包返回的时候，cwnd=ssthresh+3。</p>
+<h4 id="快速重传算法">快速重传算法</h4>
+<p>当接收端发现丢了一个中间包的时候，发送三次前一个包的 ACK，于是发送端就会快速的重传，不必等待超时再重传。这时 cwnd=cwnd/2，ssthresh=cwnd，当三个包返回的时候，cwnd=ssthresh+3。</p>
 <p>后来还有<strong>BBR 拥塞算法</strong>，它企图找到一个平衡点，就是通过不断的加快发送速度，将管道填满，但是不填满中间设备的缓存，因为这样延时会增加。</p>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="What-will-happen-when-you-input-URL-into-Browser"><a href="#What-will-happen-when-you-input-URL-into-Browser" class="headerlink" title="What will happen when you input URL into Browser."></a>What will happen when you input URL into Browser.</h3><ol>
+<h2 id="HTTP">HTTP</h2>
+<h3 id="What-will-happen-when-you-input-URL-into-Browser">What will happen when you input URL into Browser.</h3>
+<ol>
 <li>Use the URL to get the IP address by submit it to ISP and DMS turn it into IP address</li>
 <li>New HTTP request is sent including your IP address. the time you sent it and the page you asking for</li>
 <li>The server get the request. go the database to get the data, compile them into a long html file and send it back to your IP as HTTP response</li>
 <li>The browser render the page.</li>
 </ol>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<h3 id="方法">方法</h3>
+<ul>
 <li>GET。GET 就是去服务器获取一些资源。</li>
 <li>POST。它需要主动告诉服务端一些信息。要告诉服务端什么呢？一般会放到正文里。（常见格式 JSON）</li>
 <li>PUT。向指定资源位置上传最新内容。</li>
 <li>DELETE。用来删除资源</li>
 </ul>
-<h2 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h2><ul>
+<h2 id="PS">PS</h2>
+<ul>
 <li>IP 地址是一个网卡在网络世界中的通讯地址，相当于现实世界中的门牌号</li>
 <li>无类型域间选路 CIDR （Classless Inter-Domain Routing）xx.xxx.xxx.xx/24 32位中，前24位是网络号</li>
 <li>将子网掩码和 IP 地址按位运算AND，就得到网络号</li>
@@ -706,7 +722,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -901,7 +917,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">76k</span>
   
 
   
@@ -910,7 +926,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:09</span>
   
 </div>
 

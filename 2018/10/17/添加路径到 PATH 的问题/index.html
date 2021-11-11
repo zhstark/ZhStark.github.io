@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">840</span>
+                <span title="本文字数">844</span>
               
 
               
@@ -494,8 +494,12 @@
 <p>将路径输入进文件，或者是：</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> 'export <span class="built_in">PATH</span>="/usr/local/bin:$<span class="built_in">PATH</span>"' &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure>
 <p>然后用<code>echo $PATH</code> 查看，在某些情况下，该PATH 变量并没有任何改变，打开<code>/etc/paths</code> 文件，看到路径确实添加进去了。这是怎么回事呢？</p>
-<p>这时候<code>echo $PATH</code> 所显示的路径其实属于 <code>bash_profile</code>，我们用文本编辑器打开该文件，看到里面有<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export <span class="built_in">PATH</span>="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"</div></pre></td></tr></table></figure></p>
-<p>我们只需要将所要添加的路径续在<code>&quot; &quot;</code> 后面就可以了，记得用<code>:</code>与前面的路径分开。<br>eg：<br><code>export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Library/Tex/texbin&quot;</code><br>然后重启终端，再用<code>echo $PATH</code>，就发现已显示添加的路径。</p>
+<p>这时候<code>echo $PATH</code> 所显示的路径其实属于 <code>bash_profile</code>，我们用文本编辑器打开该文件，看到里面有</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export <span class="built_in">PATH</span>="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"</div></pre></td></tr></table></figure>
+<p>我们只需要将所要添加的路径续在<code>&quot; &quot;</code> 后面就可以了，记得用<code>:</code>与前面的路径分开。<br>
+eg：<br>
+<code>export PATH=&quot;/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Library/Tex/texbin&quot;</code><br>
+然后重启终端，再用<code>echo $PATH</code>，就发现已显示添加的路径。</p>
 
       
     </div>
@@ -645,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -823,7 +827,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">76k</span>
   
 
   
@@ -832,7 +836,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:09</span>
   
 </div>
 

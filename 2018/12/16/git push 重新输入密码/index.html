@@ -97,25 +97,31 @@
 
 
 
-  <meta name="description" content="第一种情况通过 https:// clone 下来的，输入：git config --global credential.helper store
+  <meta name="description" content="第一种情况
+通过 https:// clone 下来的，输入：git config --global credential.helper store
 网上普遍推这种方案，但我没试过
 这种方案的缺点在于账户密码完全明文存储在本地，不安全。
-第二种情况通过SSH clone 下来的，但每次 git push 仍要输入密码。">
+第二种情况
+通过SSH clone 下来的，但每次 git push 仍要输入密码。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git push 重新输入密码">
 <meta property="og:url" content="http://zhstark.com/2018/12/16/git push 重新输入密码/index.html">
 <meta property="og:site_name" content="小豪's blog">
-<meta property="og:description" content="第一种情况通过 https:// clone 下来的，输入：git config --global credential.helper store
+<meta property="og:description" content="第一种情况
+通过 https:// clone 下来的，输入：git config --global credential.helper store
 网上普遍推这种方案，但我没试过
 这种方案的缺点在于账户密码完全明文存储在本地，不安全。
-第二种情况通过SSH clone 下来的，但每次 git push 仍要输入密码。">
+第二种情况
+通过SSH clone 下来的，但每次 git push 仍要输入密码。">
 <meta property="og:updated_time" content="2019-02-08T21:31:56.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git push 重新输入密码">
-<meta name="twitter:description" content="第一种情况通过 https:// clone 下来的，输入：git config --global credential.helper store
+<meta name="twitter:description" content="第一种情况
+通过 https:// clone 下来的，输入：git config --global credential.helper store
 网上普遍推这种方案，但我没试过
 这种方案的缺点在于账户密码完全明文存储在本地，不安全。
-第二种情况通过SSH clone 下来的，但每次 git push 仍要输入密码。">
+第二种情况
+通过SSH clone 下来的，但每次 git push 仍要输入密码。">
 
 
 
@@ -471,7 +477,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">374</span>
+                <span title="本文字数">377</span>
               
 
               
@@ -495,19 +501,22 @@
       
 
       
-        <h3 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h3><p>通过 <code>https://</code> clone 下来的，输入：<code>git config --global credential.helper store</code></p>
+        <h3 id="第一种情况">第一种情况</h3>
+<p>通过 <code>https://</code> clone 下来的，输入：<code>git config --global credential.helper store</code></p>
 <p>网上普遍推这种方案，但我没试过</p>
 <p>这种方案的缺点在于账户密码完全明文存储在本地，不安全。</p>
-<h3 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h3><p>通过<code>SSH</code> clone 下来的，但每次 git push 仍要输入密码。<br><a id="more"></a></p>
+<h3 id="第二种情况">第二种情况</h3>
+<p>通过<code>SSH</code> clone 下来的，但每次 git push 仍要输入密码。</p>
+<a id="more"></a>
 <p>首先检查根目录下有没有 <code>.ssh</code> 文件</p>
 <ul>
-<li><p>如果有，运行</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add -K ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
-</li>
-<li><p>没有，</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C "email@mail.com"</div><div class="line"></div><div class="line">git config --global user.name "name"</div><div class="line"></div><div class="line">git config --global user.email "email@mail.com"</div><div class="line"></div><div class="line">#测试</div><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
-</li>
+<li>如果有，运行</li>
 </ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-add -K ~/.ssh/id_rsa</div></pre></td></tr></table></figure>
+<ul>
+<li>没有，</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C "email@mail.com"</div><div class="line"></div><div class="line">git config --global user.name "name"</div><div class="line"></div><div class="line">git config --global user.email "email@mail.com"</div><div class="line"></div><div class="line">#测试</div><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -666,7 +675,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -861,7 +870,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">76k</span>
   
 
   
@@ -870,7 +879,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:09</span>
   
 </div>
 
